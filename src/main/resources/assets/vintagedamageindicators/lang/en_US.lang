@@ -1,2 +1,5 @@
 vintagedamageindicators.configgui.title=Vintage Damage Indicators Config
+vintagedamageindicators.configgui.entity-display-overrides=Entity Display Overrides
+vintagedamageindicators.configgui.missing-modularui=Install ModularUI2 to edit display overrides ingame.
+vintagedamageindicators.configgui.manual-json-edit=The json can still be edited manually.
 vintagedamageindicators.critical=Critical!

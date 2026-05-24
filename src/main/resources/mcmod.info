@@ -14,7 +14,7 @@
 		"screenshots": [],
 		"parent": "",
 		"requiredMods": [],
-		"dependencies": ["modularui2"],
+		"dependencies": [],
 		"dependants": [],
 		"useDependencyInformation": false
 	}]

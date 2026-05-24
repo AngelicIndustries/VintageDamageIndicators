@@ -9,6 +9,7 @@ import java.util.Set;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.config.ConfigElement;
 
 import org.fentanylsolutions.vintagedamageindicators.Config;
@@ -134,34 +135,20 @@ public class GuiFactory implements IModGuiFactory {
 
         @Override
         protected GuiScreen buildChildScreen() {
-            GuiScreen customScreen = tryCreateEntityOverrideScreen(this.owningScreen);
-            if (customScreen != null) {
-                return customScreen;
-            }
-            return new GuiConfig(
-                this.owningScreen,
-                this.configElement.getChildElements(),
-                this.owningScreen.modID,
-                this.owningScreen.allRequireWorldRestart || this.configElement.requiresWorldRestart(),
-                this.owningScreen.allRequireMcRestart || this.configElement.requiresMcRestart(),
-                this.owningScreen.title,
-                ((this.owningScreen.titleLine2 == null ? "" : this.owningScreen.titleLine2) + " > " + this.name));
+            return createEntityOverrideScreen(this.owningScreen);
         }
     }
 
     public static boolean openEntityOverrideScreen(GuiScreen parentScreen) {
-        GuiScreen customScreen = tryCreateEntityOverrideScreen(parentScreen);
-        if (customScreen == null) {
-            return false;
-        }
+        GuiScreen customScreen = createEntityOverrideScreen(parentScreen);
         Minecraft.getMinecraft()
             .displayGuiScreen(customScreen);
         return true;
     }
 
-    private static GuiScreen tryCreateEntityOverrideScreen(GuiScreen parentScreen) {
+    private static GuiScreen createEntityOverrideScreen(GuiScreen parentScreen) {
         if (!Loader.isModLoaded("modularui2")) {
-            return null;
+            return new MissingModularUiScreen(parentScreen);
         }
         try {
             Class<?> factoryClass = Class
@@ -170,7 +157,73 @@ public class GuiFactory implements IModGuiFactory {
                 .invoke(null, parentScreen);
         } catch (ReflectiveOperationException | LinkageError e) {
             VintageDamageIndicators.LOG.warn("Failed to create the ModularUI2 entity override editor.", e);
-            return null;
+            return new MissingModularUiScreen(parentScreen);
+        }
+    }
+
+    private static final class MissingModularUiScreen extends GuiScreen {
+
+        private static final int DONE_BUTTON_ID = 2000;
+
+        private final GuiScreen parentScreen;
+
+        private MissingModularUiScreen(GuiScreen parentScreen) {
+            this.parentScreen = parentScreen;
+        }
+
+        @Override
+        public void initGui() {
+            this.buttonList.add(
+                new GuiButton(
+                    DONE_BUTTON_ID,
+                    this.width / 2 - 100,
+                    this.height - 32,
+                    StatCollector.translateToLocal("gui.done")));
+        }
+
+        @Override
+        protected void actionPerformed(GuiButton button) {
+            if (button.id == DONE_BUTTON_ID) {
+                this.mc.displayGuiScreen(this.parentScreen);
+            }
+        }
+
+        @Override
+        protected void keyTyped(char typedChar, int keyCode) {
+            if (keyCode == 1) {
+                this.mc.displayGuiScreen(this.parentScreen);
+                return;
+            }
+            super.keyTyped(typedChar, keyCode);
+        }
+
+        @Override
+        public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+            this.drawDefaultBackground();
+            drawCenteredString(
+                this.fontRendererObj,
+                StatCollector.translateToLocal("vintagedamageindicators.configgui.entity-display-overrides"),
+                this.width / 2,
+                32,
+                0xFFFFFF);
+            drawCenteredString(
+                this.fontRendererObj,
+                StatCollector.translateToLocal("vintagedamageindicators.configgui.missing-modularui"),
+                this.width / 2,
+                this.height / 2 - 6,
+                0xE0E0E0);
+            drawCenteredString(
+                this.fontRendererObj,
+                StatCollector.translateToLocal("vintagedamageindicators.configgui.manual-json-edit"),
+                this.width / 2,
+                this.height / 2 + 6,
+                0xA0A0A0);
+            super.drawScreen(mouseX, mouseY, partialTicks);
+        }
+
+        @Override
+        public boolean doesGuiPauseGame() {
+            return true;
         }
     }
 

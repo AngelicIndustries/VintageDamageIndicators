@@ -1,2 +1,5 @@
 vintagedamageindicators.configgui.title=复古伤害显示配置
+vintagedamageindicators.configgui.entity-display-overrides=
+vintagedamageindicators.configgui.missing-modularui=
+vintagedamageindicators.configgui.manual-json-edit=
 vintagedamageindicators.critical=暴击!
