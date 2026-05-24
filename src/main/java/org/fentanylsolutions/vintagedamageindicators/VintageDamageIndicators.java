@@ -24,7 +24,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
     acceptedMinecraftVersions = "[1.7.10]",
     acceptableRemoteVersions = "*",
     guiFactory = "org.fentanylsolutions.vintagedamageindicators.gui.GuiFactory",
-    customProperties = { @Mod.CustomProperty(k = "license", v = "LGPLv3+SNEED"),
+    customProperties = { @Mod.CustomProperty(k = "license", v = "LGPLv3"),
         @Mod.CustomProperty(
             k = "issueTrackerUrl",
             v = "https://github.com/JackOfNoneTrades/VintageDamageIndicators/issues"),
