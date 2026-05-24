@@ -7,6 +7,7 @@ Retro Damage Indicators backport with potion status support and damage particles
 [![hub](images/badges/github.png)](https://github.com/JackOfNoneTrades/VintageDamageIndicators/releases)
 [![curse](images/badges/curse.png)](https://www.curseforge.com/minecraft/mc-mods/vintage-damage-indicators)
 [![modrinth](images/badges/modrinth.png)](https://modrinth.com/mod/vintage-damage-indicators)
+[![67](images/badges/67.png)](https://67.fentanylsolutions.org/mod/vintage-damage-indicators)
 [![maven](images/badges/maven.png)](https://maven.fentanylsolutions.org/#/releases/org/fentanylsolutions/vintagedamageindicators/VintageDamageIndicators)
 ![forge](images/badges/forge.png)
 [![cord](images/badges/cord.png)](https://discord.gg/xAWCqGrguG)
@@ -22,7 +23,7 @@ Most things are configurable.
 
 ## Dependencies
 * [UniMixins](https://modrinth.com/mod/unimixins) [![curse](images/icons/curse.png)](https://www.curseforge.com/minecraft/mc-mods/unimixins) [![modrinth](images/icons/modrinth.png)](https://modrinth.com/mod/unimixins/versions) [![git](images/icons/git.png)](https://github.com/LegacyModdingMC/UniMixins/releases)
-* [ModularUI2](https://github.com/GTNewHorizons/ModularUI2) [![git](images/icons/git.png)](https://github.com/GTNewHorizons/ModularUI2)
+* Optional (required for version `0.9.3` and below): [ModularUI2](https://github.com/GTNewHorizons/ModularUI2) [![curse](images/icons/curse.png)](https://www.curseforge.com/minecraft/mc-mods/modularui)  [![modrinth](images/icons/modrinth.png)](https://modrinth.com/mod/modularui) [![git](images/icons/git.png)](https://github.com/GTNewHorizons/ModularUI2)
 
 ## Building
 
@@ -34,7 +35,7 @@ Most things are configurable.
 
 ## License
 
-`LgplV3 + SNEED`.
+`LGPLv3`.
 
 ## Buy me some creatine
 
@@ -43,4 +44,4 @@ Most things are configurable.
 
 <br>
 
-![license](images/lgplsneed_small.png)
+![license](images/license_small.png)

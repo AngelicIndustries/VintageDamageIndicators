@@ -48,6 +48,7 @@ dependencies {
     /* Fixes the mod menu being broken ingame, allows for quick config testing */
     runtimeOnlyNonPublishable(rfg.deobf("curse.maven:endercore-231868:4671288"))
 
+    // Optional at runtime; only the entity override editor uses it.
     devOnlyNonPublishable("com.github.GTNewHorizons:ModularUI2:2.3.56-1.7.10:dev")
 
     // Content mods
