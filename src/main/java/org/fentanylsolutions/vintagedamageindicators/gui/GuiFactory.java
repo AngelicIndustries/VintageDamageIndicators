@@ -9,11 +9,11 @@ import java.util.Set;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.config.ConfigElement;
 
 import org.fentanylsolutions.vintagedamageindicators.Config;
 import org.fentanylsolutions.vintagedamageindicators.VintageDamageIndicators;
+import org.fentanylsolutions.vintagedamageindicators.gui.angelica.EntityOverrideEditorScreen;
 import org.fentanylsolutions.vintagedamageindicators.varinstances.VarInstanceCommon;
 
 import com.google.common.collect.Lists;
@@ -23,7 +23,6 @@ import cpw.mods.fml.client.config.DummyConfigElement;
 import cpw.mods.fml.client.config.GuiConfig;
 import cpw.mods.fml.client.config.GuiConfigEntries;
 import cpw.mods.fml.client.config.IConfigElement;
-import cpw.mods.fml.common.Loader;
 
 @SuppressWarnings("unused")
 public class GuiFactory implements IModGuiFactory {
@@ -147,84 +146,7 @@ public class GuiFactory implements IModGuiFactory {
     }
 
     private static GuiScreen createEntityOverrideScreen(GuiScreen parentScreen) {
-        if (!Loader.isModLoaded("modularui2")) {
-            return new MissingModularUiScreen(parentScreen);
-        }
-        try {
-            Class<?> factoryClass = Class
-                .forName("org.fentanylsolutions.vintagedamageindicators.gui.mui.EntityOverrideEditorScreenFactory");
-            return (GuiScreen) factoryClass.getMethod("create", GuiScreen.class)
-                .invoke(null, parentScreen);
-        } catch (ReflectiveOperationException | LinkageError e) {
-            VintageDamageIndicators.LOG.warn("Failed to create the ModularUI2 entity override editor.", e);
-            return new MissingModularUiScreen(parentScreen);
-        }
-    }
-
-    private static final class MissingModularUiScreen extends GuiScreen {
-
-        private static final int DONE_BUTTON_ID = 2000;
-
-        private final GuiScreen parentScreen;
-
-        private MissingModularUiScreen(GuiScreen parentScreen) {
-            this.parentScreen = parentScreen;
-        }
-
-        @Override
-        public void initGui() {
-            this.buttonList.add(
-                new GuiButton(
-                    DONE_BUTTON_ID,
-                    this.width / 2 - 100,
-                    this.height - 32,
-                    StatCollector.translateToLocal("gui.done")));
-        }
-
-        @Override
-        protected void actionPerformed(GuiButton button) {
-            if (button.id == DONE_BUTTON_ID) {
-                this.mc.displayGuiScreen(this.parentScreen);
-            }
-        }
-
-        @Override
-        protected void keyTyped(char typedChar, int keyCode) {
-            if (keyCode == 1) {
-                this.mc.displayGuiScreen(this.parentScreen);
-                return;
-            }
-            super.keyTyped(typedChar, keyCode);
-        }
-
-        @Override
-        public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-            this.drawDefaultBackground();
-            drawCenteredString(
-                this.fontRendererObj,
-                StatCollector.translateToLocal("vintagedamageindicators.configgui.entity-display-overrides"),
-                this.width / 2,
-                32,
-                0xFFFFFF);
-            drawCenteredString(
-                this.fontRendererObj,
-                StatCollector.translateToLocal("vintagedamageindicators.configgui.missing-modularui"),
-                this.width / 2,
-                this.height / 2 - 6,
-                0xE0E0E0);
-            drawCenteredString(
-                this.fontRendererObj,
-                StatCollector.translateToLocal("vintagedamageindicators.configgui.manual-json-edit"),
-                this.width / 2,
-                this.height / 2 + 6,
-                0xA0A0A0);
-            super.drawScreen(mouseX, mouseY, partialTicks);
-        }
-
-        @Override
-        public boolean doesGuiPauseGame() {
-            return true;
-        }
+        return new EntityOverrideEditorScreen(parentScreen);
     }
 
     public static PendingEntityOverrideState copyPendingEntityOverrideState() {

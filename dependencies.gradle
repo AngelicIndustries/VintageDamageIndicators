@@ -40,16 +40,14 @@ dependencies {
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Angelica:2.0.0-alpha25:dev")
     runtimeOnlyNonPublishable(rfg.deobf("curse.maven:catalogue-vintage-1465746:7695645")) // 1.0.2-1.7.10
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:GTNHLib:0.9.52:dev")
-    runtimeOnlyNonPublishable("org.fentanylsolutions.fentlib:FentLib:0.0.44:dev")
+    devOnlyNonPublishable("org.fentanylsolutions.fentlib:FentLib:6926689-snapshot:dev")
+    //devOnlyNonPublishable(files("../FentLib/build/libs/fentlib-testerino-dev.jar"))
     devOnlyNonPublishable("org.fentanylsolutions.tabfaces:TabFaces:1.0.15")
     //compileOnly(files("../TabFaces/build/classes/java/main"))
 
     shadowImplementation("org.joml:joml:1.10.8")
     /* Fixes the mod menu being broken ingame, allows for quick config testing */
     runtimeOnlyNonPublishable(rfg.deobf("curse.maven:endercore-231868:4671288"))
-
-    // Optional at runtime; only the entity override editor uses it.
-    devOnlyNonPublishable("com.github.GTNewHorizons:ModularUI2:2.3.56-1.7.10:dev")
 
     // Content mods
     compileOnly("org.fentanylsolutions.eyesintheshadows:EyesInTheShadows:test4")
