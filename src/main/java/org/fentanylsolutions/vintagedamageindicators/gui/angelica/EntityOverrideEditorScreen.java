@@ -161,6 +161,7 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
 
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) {
+        this.clearTextFocus();
         boolean handled = false;
 
         if (this.pageButton.mouseClicked(mouseX, mouseY, mouseButton)
@@ -187,10 +188,6 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         if (!handled && SodiumGui
             .isInside(mouseX, mouseY, this.rightX, this.optionListY, this.rightWidth, this.optionListHeight)) {
             handled = this.clickOptionRows(mouseX, mouseY, mouseButton);
-        }
-
-        if (!handled) {
-            this.clearTextFocus();
         }
     }
 
