@@ -142,6 +142,7 @@ public class HudEventHandler extends Gui {
         }
 
         ClientPotionEffectsCache.tick();
+        updateTargetStateLinger();
     }
 
     @SubscribeEvent
@@ -190,9 +191,11 @@ public class HudEventHandler extends Gui {
 
         if (state.getTargetEntity() == null || state.getTargetEntity().isDead) {
             state.clearTarget();
-            return;
         }
+    }
 
+    private void updateTargetStateLinger() {
+        HudIndicatorState state = VintageDamageIndicators.varInstanceClient.hudIndicatorState;
         if (state.getLingerTicks() > 0) {
             state.setLingerTicks(state.getLingerTicks() - 1);
         } else {
