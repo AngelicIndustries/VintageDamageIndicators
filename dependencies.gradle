@@ -60,7 +60,7 @@ dependencies {
     //runtimeOnlyNonPublishable(rfg.deobf("curse.maven:witchery-69673:2234410"))
     //runtimeOnlyNonPublishable('com.github.GTNewHorizons:Baubles-Expanded:2.2.9-GTNH:dev')
     //runtimeOnlyNonPublishable('thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev') {transitive=false}
-    runtimeOnlyNonPublishable("ganymedes01.etfuturum:Et-Futurum-Requiem:2.6.34-GTNH:dev")
+    //runtimeOnlyNonPublishable("ganymedes01.etfuturum:Et-Futurum-Requiem:2.6.34-GTNH:dev")
 
     // Disabled
     // implementation(rfg.deobf("curse.maven:bspkrscore-59218:2227503"))
