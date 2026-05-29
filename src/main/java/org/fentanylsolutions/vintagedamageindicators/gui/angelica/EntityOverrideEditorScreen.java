@@ -63,7 +63,7 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
     private static final int CHECKBOX_SIZE = 10;
     private static final int TEXT_PADDING = 6;
     private static final int TOOLTIP_WIDTH = 214;
-    private static final int PREVIEW_BACKGROUND_RGB = 0x4F5560;
+    private static final int PREVIEW_BACKGROUND_RGB = 0x8A929C;
     private static final int PREVIEW_BACKGROUND_ALPHA = 0xE0;
     private static final int PREVIEW_TITLE_COLOR = 0xFFFFFFFF;
     private static final int PREVIEW_DETAIL_COLOR = 0xFFB8B8B8;
