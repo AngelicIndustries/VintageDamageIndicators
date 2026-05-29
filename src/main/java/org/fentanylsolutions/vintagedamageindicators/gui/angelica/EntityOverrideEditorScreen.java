@@ -87,8 +87,8 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
     private final List<OptionRow> optionRows = new ArrayList<>();
     private final SodiumGuiButton pageButton;
     private final SodiumGuiButton undoButton;
-    private final SodiumGuiButton applyButton;
-    private final SodiumGuiButton doneButton;
+    private final SodiumGuiButton cancelButton;
+    private final SodiumGuiButton saveButton;
     private final SodiumGuiScrollState mobScroll = new SodiumGuiScrollState();
     private final SodiumGuiScrollState optionScroll = new SodiumGuiScrollState();
 
@@ -113,11 +113,8 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         this.state = new EditorState(parentScreen instanceof GuiFactory.ConfigGui);
         this.pageButton = new SodiumGuiButton("Entity Overrides", null);
         this.undoButton = new SodiumGuiButton("Undo", this::undoChanges);
-        this.applyButton = new SodiumGuiButton("Apply", () -> {
-            this.state.save();
-            this.rebuildOptionRows();
-        });
-        this.doneButton = new SodiumGuiButton("Save & Close", this::saveAndClose);
+        this.cancelButton = new SodiumGuiButton("Cancel", this::discardAndClose);
+        this.saveButton = new SodiumGuiButton("Save", this::saveAndClose);
     }
 
     @Override
@@ -168,8 +165,8 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
 
         if (this.pageButton.mouseClicked(mouseX, mouseY, mouseButton)
             || this.undoButton.mouseClicked(mouseX, mouseY, mouseButton)
-            || this.applyButton.mouseClicked(mouseX, mouseY, mouseButton)
-            || this.doneButton.mouseClicked(mouseX, mouseY, mouseButton)) {
+            || this.cancelButton.mouseClicked(mouseX, mouseY, mouseButton)
+            || this.saveButton.mouseClicked(mouseX, mouseY, mouseButton)) {
             handled = true;
         }
 
@@ -312,15 +309,16 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         int pageWidth = 16 + this.fontRendererObj.getStringWidth(this.pageButton.getLabel());
         this.pageButton.setBounds(OUTER_PADDING, PAGE_BUTTON_Y, pageWidth, 18);
 
-        this.doneButton.setBounds(this.width - 100, this.height - 26, 92, 20);
-        this.applyButton.setBounds(this.width - 169, this.height - 26, 65, 20);
-        this.undoButton.setBounds(this.width - 238, this.height - 26, 65, 20);
+        this.saveButton.setBounds(this.width - 73, this.height - 26, 65, 20);
+        this.cancelButton.setBounds(this.width - 142, this.height - 26, 65, 20);
+        this.undoButton.setBounds(this.width - 211, this.height - 26, 65, 20);
 
         boolean dirty = this.state.isDirty();
         this.undoButton.setVisible(true);
         this.undoButton.setEnabled(dirty);
-        this.applyButton.setEnabled(dirty);
-        this.doneButton.setEnabled(true);
+        this.cancelButton.setEnabled(true);
+        this.saveButton.setEnabled(dirty);
+        this.saveButton.setSelected(true);
         this.mobScroll.clampTo(
             SodiumGui.getContentHeight(
                 this.state.getFilteredOptions()
@@ -525,8 +523,8 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
 
     private void drawBottomBar(int mouseX, int mouseY, float partialTicks) {
         this.undoButton.render(this.fontRendererObj, mouseX, mouseY);
-        this.applyButton.render(this.fontRendererObj, mouseX, mouseY);
-        this.doneButton.render(this.fontRendererObj, mouseX, mouseY);
+        this.cancelButton.render(this.fontRendererObj, mouseX, mouseY);
+        this.saveButton.render(this.fontRendererObj, mouseX, mouseY);
     }
 
     private void drawHudPreview(int x, int y) {
