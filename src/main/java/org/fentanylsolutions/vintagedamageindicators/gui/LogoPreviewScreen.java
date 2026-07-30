@@ -12,6 +12,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
 import net.minecraft.world.World;
@@ -22,6 +23,7 @@ import org.fentanylsolutions.vintagedamageindicators.VintageDamageIndicators;
 import org.fentanylsolutions.vintagedamageindicators.client.HudEntityRenderer;
 import org.fentanylsolutions.vintagedamageindicators.client.HudPreviewMath;
 import org.fentanylsolutions.vintagedamageindicators.client.HudPreviewWorld;
+import org.fentanylsolutions.vintagedamageindicators.client.PotionIconRenderer;
 import org.fentanylsolutions.vintagedamageindicators.client.PreviewEntityFactory;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
@@ -364,18 +366,22 @@ public class LogoPreviewScreen extends GuiScreen {
             int textX = drawX;
 
             if (entry.hasIcon && entry.potion != null) {
-                GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                GL11.glEnable(GL11.GL_TEXTURE_2D);
-                minecraft.getTextureManager()
-                    .bindTexture(INVENTORY_TEXTURE);
-                int iconIndex = entry.potion.getStatusIconIndex();
-                drawTexturedModalRect(
-                    drawX,
-                    POTION_PANEL_Y + POTION_ICON_Y,
-                    iconIndex % 8 * 18,
-                    198 + iconIndex / 8 * 18,
-                    POTION_ICON_SIZE,
-                    POTION_ICON_SIZE);
+                int iconY = POTION_PANEL_Y + POTION_ICON_Y;
+                if (entry.potion.hasStatusIcon()) {
+                    GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+                    GL11.glEnable(GL11.GL_TEXTURE_2D);
+                    minecraft.getTextureManager()
+                        .bindTexture(INVENTORY_TEXTURE);
+                    int iconIndex = entry.potion.getStatusIconIndex();
+                    drawTexturedModalRect(
+                        drawX,
+                        iconY,
+                        iconIndex % 8 * 18,
+                        198 + iconIndex / 8 * 18,
+                        POTION_ICON_SIZE,
+                        POTION_ICON_SIZE);
+                }
+                PotionIconRenderer.drawCustomIcon(entry.potion, entry.effect, minecraft, drawX, iconY);
                 textX += POTION_ICON_SIZE + POTION_TIME_GAP;
             }
 
@@ -444,7 +450,7 @@ public class LogoPreviewScreen extends GuiScreen {
 
             String timeText = PREVIEW_SHOW_POTION_TIME ? StringUtils.ticksToElapsedTime(Math.max(0, durationTicks))
                 : "";
-            boolean hasIcon = potion.hasStatusIcon();
+            boolean hasIcon = PotionIconRenderer.hasIcon(potion);
             int width = hasIcon ? POTION_ICON_SIZE : 0;
             if (PREVIEW_SHOW_POTION_TIME) {
                 if (hasIcon) {
@@ -455,7 +461,14 @@ public class LogoPreviewScreen extends GuiScreen {
             if (width <= 0) {
                 width = POTION_ICON_SIZE;
             }
-            entries.add(new PreviewPotionEntry(potion, hasIcon, timeText, width, potion.id));
+            entries.add(
+                new PreviewPotionEntry(
+                    potion,
+                    new PotionEffect(potion.id, Math.max(0, durationTicks), 0),
+                    hasIcon,
+                    timeText,
+                    width,
+                    potion.id));
         }
 
         entries.sort(Comparator.comparingInt(entry -> entry.sortOrder));
@@ -473,13 +486,16 @@ public class LogoPreviewScreen extends GuiScreen {
     private static final class PreviewPotionEntry {
 
         private final Potion potion;
+        private final PotionEffect effect;
         private final boolean hasIcon;
         private final String timeText;
         private final int width;
         private final int sortOrder;
 
-        private PreviewPotionEntry(Potion potion, boolean hasIcon, String timeText, int width, int sortOrder) {
+        private PreviewPotionEntry(Potion potion, PotionEffect effect, boolean hasIcon, String timeText, int width,
+            int sortOrder) {
             this.potion = potion;
+            this.effect = effect;
             this.hasIcon = hasIcon;
             this.timeText = timeText;
             this.width = width;

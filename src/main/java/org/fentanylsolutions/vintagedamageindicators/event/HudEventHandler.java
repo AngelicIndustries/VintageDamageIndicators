@@ -34,6 +34,7 @@ import org.fentanylsolutions.vintagedamageindicators.client.HudEntityRenderer;
 import org.fentanylsolutions.vintagedamageindicators.client.HudIndicatorState;
 import org.fentanylsolutions.vintagedamageindicators.client.HudPreviewMath;
 import org.fentanylsolutions.vintagedamageindicators.client.HudPreviewParticles;
+import org.fentanylsolutions.vintagedamageindicators.client.PotionIconRenderer;
 import org.fentanylsolutions.vintagedamageindicators.client.PreviewRenderPatches;
 import org.fentanylsolutions.vintagedamageindicators.network.ClientPotionEffectsCache;
 import org.fentanylsolutions.vintagedamageindicators.network.EntityPotionEffectsMessage;
@@ -551,18 +552,22 @@ public class HudEventHandler extends Gui {
             int textX = drawX;
 
             if (entry.potion != null) {
-                GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                GL11.glEnable(GL11.GL_TEXTURE_2D);
-                minecraft.getTextureManager()
-                    .bindTexture(INVENTORY_TEXTURE);
-                int iconIndex = entry.potion.getStatusIconIndex();
-                drawTexturedModalRect(
-                    drawX,
-                    POTION_PANEL_Y + POTION_ICON_Y,
-                    iconIndex % 8 * 18,
-                    198 + iconIndex / 8 * 18,
-                    POTION_ICON_SIZE,
-                    POTION_ICON_SIZE);
+                int iconY = POTION_PANEL_Y + POTION_ICON_Y;
+                if (entry.potion.hasStatusIcon()) {
+                    GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+                    GL11.glEnable(GL11.GL_TEXTURE_2D);
+                    minecraft.getTextureManager()
+                        .bindTexture(INVENTORY_TEXTURE);
+                    int iconIndex = entry.potion.getStatusIconIndex();
+                    drawTexturedModalRect(
+                        drawX,
+                        iconY,
+                        iconIndex % 8 * 18,
+                        198 + iconIndex / 8 * 18,
+                        POTION_ICON_SIZE,
+                        POTION_ICON_SIZE);
+                }
+                PotionIconRenderer.drawCustomIcon(entry.potion, entry.effect, minecraft, drawX, iconY);
                 textX += POTION_ICON_SIZE + POTION_TIME_GAP;
             }
 
@@ -618,7 +623,7 @@ public class HudEventHandler extends Gui {
             if (syncedEffect.hasType() && syncedEffect.potionId >= 0
                 && syncedEffect.potionId < Potion.potionTypes.length) {
                 Potion resolved = Potion.potionTypes[syncedEffect.potionId];
-                if (resolved != null && resolved.hasStatusIcon()) {
+                if (PotionIconRenderer.hasIcon(resolved)) {
                     potion = resolved;
                 }
             }
@@ -640,8 +645,15 @@ public class HudEventHandler extends Gui {
                 continue;
             }
 
+            PotionEffect effect = potion == null ? null
+                : new PotionEffect(potion.id, syncedEffect.hasDuration() ? syncedEffect.duration : 0, 0);
             entries.add(
-                new PotionStripEntry(potion, timeText, entryWidth, potion != null ? potion.id : Integer.MAX_VALUE));
+                new PotionStripEntry(
+                    potion,
+                    effect,
+                    timeText,
+                    entryWidth,
+                    potion != null ? potion.id : Integer.MAX_VALUE));
         }
 
         return buildPotionStripData(entries, tick);
@@ -665,7 +677,7 @@ public class HudEventHandler extends Gui {
             }
 
             Potion potion = Potion.potionTypes[effect.getPotionID()];
-            if (potion == null || !potion.hasStatusIcon()) {
+            if (!PotionIconRenderer.hasIcon(potion)) {
                 continue;
             }
 
@@ -674,7 +686,7 @@ public class HudEventHandler extends Gui {
             if (Config.hudPotionEffectTime) {
                 entryWidth += POTION_TIME_GAP + fontRenderer.getStringWidth(timeText);
             }
-            entries.add(new PotionStripEntry(potion, timeText, entryWidth, potion.id));
+            entries.add(new PotionStripEntry(potion, effect, timeText, entryWidth, potion.id));
         }
 
         return buildPotionStripData(entries, tick);
@@ -793,12 +805,14 @@ public class HudEventHandler extends Gui {
     private static final class PotionStripEntry {
 
         private final Potion potion;
+        private final PotionEffect effect;
         private final String timeText;
         private final int width;
         private final int sortOrder;
 
-        private PotionStripEntry(Potion potion, String timeText, int width, int sortOrder) {
+        private PotionStripEntry(Potion potion, PotionEffect effect, String timeText, int width, int sortOrder) {
             this.potion = potion;
+            this.effect = effect;
             this.timeText = timeText;
             this.width = width;
             this.sortOrder = sortOrder;
