@@ -34,18 +34,18 @@
  * For more details, see https://docs.gradle.org/8.0.1/userguide/java_library_plugin.html#sec:java_library_configurations_graph
  */
 dependencies {
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:Hodgepodge:2.7.153:dev")
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.8.100-GTNH:dev")
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:Hodgepodge:2.7.179:dev")
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.8.117-GTNH:dev")
     runtimeOnlyNonPublishable("curse.maven:archaicfix-677782:6785842")
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Angelica:2.0.0-alpha25:dev")
     runtimeOnlyNonPublishable(rfg.deobf("curse.maven:catalogue-vintage-1465746:7695645")) // 1.0.2-1.7.10
-    runtimeOnlyNonPublishable("com.github.GTNewHorizons:GTNHLib:0.11.1:dev")
-    devOnlyNonPublishable("org.fentanylsolutions.fentlib:FentLib:6926689-snapshot:dev")
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:GTNHLib:0.11.33:dev")
+    devOnlyNonPublishable("org.fentanylsolutions.fentlib:FentLib:0.0.53:dev")
     //devOnlyNonPublishable(files("../FentLib/build/libs/fentlib-testerino-dev.jar"))
-    devOnlyNonPublishable("org.fentanylsolutions.tabfaces:TabFaces:1.0.15")
+    devOnlyNonPublishable("org.fentanylsolutions.tabfaces:TabFaces:1.0.16")
     //compileOnly(files("../TabFaces/build/classes/java/main"))
 
-    shadowImplementation("org.joml:joml:1.10.8")
+    shadowImplementation("org.joml:joml:1.10.9")
     /* Fixes the mod menu being broken ingame, allows for quick config testing */
     runtimeOnlyNonPublishable(rfg.deobf("curse.maven:endercore-231868:4671288"))
 
