@@ -57,7 +57,7 @@ public class HudEventHandler extends Gui {
     private static final int POTION_PANEL_HEIGHT = 26;
     private static final int POTION_LEFT_WIDTH = 7;
     private static final int POTION_RIGHT_WIDTH = 6;
-    private static final int POTION_CONTENT_PADDING_LEFT = 6;
+    private static final int POTION_CONTENT_PADDING_LEFT = 3;
     private static final int POTION_CONTENT_PADDING_RIGHT = 4;
     private static final int POTION_ICON_SIZE = 18;
     private static final int POTION_ICON_Y = 4;
@@ -545,7 +545,7 @@ public class HudEventHandler extends Gui {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(GL11.GL_BLEND);
 
-        int drawX = POTION_PANEL_X + POTION_CONTENT_PADDING_LEFT;
+        int drawX = POTION_PANEL_X + POTION_LEFT_WIDTH + POTION_CONTENT_PADDING_LEFT;
 
         for (int index = 0; index < potionStrip.entries.size(); index++) {
             PotionStripEntry entry = potionStrip.entries.get(index);

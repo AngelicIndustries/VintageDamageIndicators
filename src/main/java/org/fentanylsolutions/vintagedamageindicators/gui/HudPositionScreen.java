@@ -41,7 +41,7 @@ public class HudPositionScreen extends GuiScreen {
     private static final int POTION_PANEL_HEIGHT = 26;
     private static final int POTION_LEFT_WIDTH = 7;
     private static final int POTION_RIGHT_WIDTH = 6;
-    private static final int POTION_CONTENT_PADDING_LEFT = 6;
+    private static final int POTION_CONTENT_PADDING_LEFT = 3;
     private static final int POTION_CONTENT_PADDING_RIGHT = 4;
     private static final int POTION_ICON_SIZE = 18;
     private static final int POTION_ICON_Y = 4;
@@ -426,7 +426,7 @@ public class HudPositionScreen extends GuiScreen {
         drawStandaloneTexture(rightX, POTION_PANEL_Y, POTION_RIGHT_WIDTH, POTION_PANEL_HEIGHT);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(GL11.GL_BLEND);
-        int drawX = POTION_PANEL_X + POTION_CONTENT_PADDING_LEFT;
+        int drawX = POTION_PANEL_X + POTION_LEFT_WIDTH + POTION_CONTENT_PADDING_LEFT;
         String timeText = StringUtils.ticksToElapsedTime(SAMPLE_POTION_DURATION);
         Potion potion = getSamplePotion();
         if (potion != null && potion.hasStatusIcon()) {
