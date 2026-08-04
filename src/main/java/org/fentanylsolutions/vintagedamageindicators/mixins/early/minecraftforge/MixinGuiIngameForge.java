@@ -18,7 +18,10 @@ import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = GuiIngameForge.class, remap = false)
@@ -29,6 +32,9 @@ public abstract class MixinGuiIngameForge extends GuiIngame {
 
     @Unique
     private int vdi$bossBarShiftY;
+
+    @Unique
+    private boolean vdi$bossBarMatrixPushed;
 
     @Unique
     private int vdi$playerListShiftX;
@@ -44,6 +50,7 @@ public abstract class MixinGuiIngameForge extends GuiIngame {
     private void vdi$shiftBossBarHead(CallbackInfo ci) {
         this.vdi$bossBarShiftX = 0;
         this.vdi$bossBarShiftY = 0;
+        this.vdi$bossBarMatrixPushed = false;
         if (BossStatus.bossName == null || BossStatus.statusBarTime <= 0 || Config.disableBossBar) {
             return;
         }
@@ -64,17 +71,25 @@ public abstract class MixinGuiIngameForge extends GuiIngame {
         this.vdi$bossBarShiftX = layout.left - defaultLeft;
         this.vdi$bossBarShiftY = layout.top - defaultTop;
         if (this.vdi$bossBarShiftX != 0 || this.vdi$bossBarShiftY != 0) {
+            int oldMatrixMode = GL11.glGetInteger(GL11.GL_MATRIX_MODE);
+            GL11.glMatrixMode(GL11.GL_MODELVIEW);
             GL11.glPushMatrix();
             GL11.glTranslatef(this.vdi$bossBarShiftX, this.vdi$bossBarShiftY, 0.0F);
+            this.vdi$bossBarMatrixPushed = true;
+            GL11.glMatrixMode(oldMatrixMode);
         }
     }
 
     @Inject(method = "renderBossHealth", at = @At("RETURN"), remap = false)
     private void vdi$shiftBossBarReturn(CallbackInfo ci) {
-        if (this.vdi$bossBarShiftX != 0 || this.vdi$bossBarShiftY != 0) {
+        if (this.vdi$bossBarMatrixPushed) {
+            int oldMatrixMode = GL11.glGetInteger(GL11.GL_MATRIX_MODE);
+            GL11.glMatrixMode(GL11.GL_MODELVIEW);
             GL11.glPopMatrix();
+            GL11.glMatrixMode(oldMatrixMode);
             this.vdi$bossBarShiftX = 0;
             this.vdi$bossBarShiftY = 0;
+            this.vdi$bossBarMatrixPushed = false;
         }
     }
 
@@ -131,18 +146,15 @@ public abstract class MixinGuiIngameForge extends GuiIngame {
         int defaultLeft = (width - layout.columns * layout.columnWidth) / 2;
         this.vdi$playerListShiftX = layout.left - defaultLeft;
         this.vdi$playerListShiftY = layout.top - HudOverlayLayout.PLAYER_LIST_TOP;
-        if (this.vdi$playerListShiftX != 0 || this.vdi$playerListShiftY != 0) {
-            GL11.glPushMatrix();
-            GL11.glTranslatef(this.vdi$playerListShiftX, this.vdi$playerListShiftY, 0.0F);
-        }
     }
 
-    @Inject(method = "renderPlayerList", at = @At("RETURN"), remap = false)
-    private void vdi$shiftPlayerListReturn(int width, int height, CallbackInfo ci) {
-        if (this.vdi$playerListShiftX != 0 || this.vdi$playerListShiftY != 0) {
-            GL11.glPopMatrix();
-            this.vdi$playerListShiftX = 0;
-            this.vdi$playerListShiftY = 0;
-        }
+    @ModifyVariable(method = "renderPlayerList", at = @At("STORE"), index = 10, remap = false)
+    private int vdi$shiftPlayerListLeft(int left) {
+        return left + this.vdi$playerListShiftX;
+    }
+
+    @ModifyConstant(method = "renderPlayerList", constant = @Constant(intValue = 10, ordinal = 0), remap = false)
+    private int vdi$shiftPlayerListTop(int top) {
+        return top + this.vdi$playerListShiftY;
     }
 }

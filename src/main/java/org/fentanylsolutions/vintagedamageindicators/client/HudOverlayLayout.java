@@ -147,6 +147,36 @@ public final class HudOverlayLayout {
         return new PlayerListLayout(left, top, rows, columns, columnWidth, playerCount, moved);
     }
 
+    public static PlayerListShift resolveCustomPlayerListShift(int screenWidth, int screenHeight, OverlayRect hudRect,
+        BossBarLayout bossBar, int playerListWidth) {
+        int safeWidth = Math.max(1, Math.min(playerListWidth, screenWidth));
+        int defaultLeft = screenWidth / 2 - safeWidth / 2;
+        int defaultTop = PLAYER_LIST_TOP;
+        int left = defaultLeft;
+        int top = defaultTop;
+
+        if (bossBar != null && bossBar.visible) {
+            top = Math.max(top, bossBar.bounds.bottom + PLAYER_LIST_MARGIN);
+        }
+
+        OverlayRect playerListRect = buildCustomPlayerListRect(left, top, safeWidth, screenHeight);
+        if (hudRect != null && playerListRect.intersects(hudRect)) {
+            int rightCandidate = hudRect.right + PLAYER_LIST_MARGIN + 1;
+            if (fitsCustomPlayerListHorizontally(rightCandidate, safeWidth, screenWidth)) {
+                left = rightCandidate;
+            } else {
+                int leftCandidate = hudRect.left - PLAYER_LIST_MARGIN - safeWidth - 1;
+                if (fitsCustomPlayerListHorizontally(leftCandidate, safeWidth, screenWidth)) {
+                    left = leftCandidate;
+                } else {
+                    top = Math.max(top, hudRect.bottom + PLAYER_LIST_MARGIN + 1);
+                }
+            }
+        }
+
+        return new PlayerListShift(left - defaultLeft, top - defaultTop);
+    }
+
     private static OverlayRect buildBossBarRect(int left, int top, int bossNameWidth) {
         int nameLeft = left + BOSS_BAR_WIDTH / 2 - bossNameWidth / 2;
         int right = Math.max(left + BOSS_BAR_WIDTH, nameLeft + bossNameWidth);
@@ -156,6 +186,14 @@ public final class HudOverlayLayout {
 
     private static OverlayRect buildPlayerListRect(int left, int top, int rows, int columns, int columnWidth) {
         return new OverlayRect(left - 1, top - 1, columnWidth * columns + 1, rows * PLAYER_LIST_ROW_HEIGHT + 1);
+    }
+
+    private static OverlayRect buildCustomPlayerListRect(int left, int top, int width, int screenHeight) {
+        return new OverlayRect(left - 1, top - 1, width + 2, Math.max(1, screenHeight - top + 1));
+    }
+
+    private static boolean fitsCustomPlayerListHorizontally(int left, int width, int screenWidth) {
+        return left - 1 >= 0 && left + width + 1 <= screenWidth;
     }
 
     private static boolean fitsHorizontal(int left, int width, int screenWidth) {
@@ -232,6 +270,17 @@ public final class HudOverlayLayout {
             this.columnWidth = columnWidth;
             this.playerCount = playerCount;
             this.moved = moved;
+        }
+    }
+
+    public static final class PlayerListShift {
+
+        public final int x;
+        public final int y;
+
+        private PlayerListShift(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
     }
 }

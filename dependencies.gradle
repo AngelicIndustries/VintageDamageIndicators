@@ -43,6 +43,7 @@ dependencies {
     devOnlyNonPublishable("org.fentanylsolutions.fentlib:FentLib:0.0.53:dev")
     //devOnlyNonPublishable(files("../FentLib/build/libs/fentlib-testerino-dev.jar"))
     devOnlyNonPublishable("org.fentanylsolutions.tabfaces:TabFaces:1.0.16")
+    compileOnly("com.github.GTNewHorizons:ServerUtilities:2.4.3:dev")
     //compileOnly(files("../TabFaces/build/classes/java/main"))
 
     shadowImplementation("org.joml:joml:1.10.9")
