@@ -40,11 +40,11 @@ dependencies {
     //runtimeOnlyNonPublishable("com.github.GTNewHorizons:Angelica:2.0.0-alpha25:dev")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:GTNHLib:0.11.33:dev")
     runtimeOnlyNonPublishable(rfg.deobf("curse.maven:catalogue-vintage-1465746:8384975")) // 1.0.8-1.7.10
-    devOnlyNonPublishable("org.fentanylsolutions.fentlib:FentLib:0.0.53:dev")
-    //devOnlyNonPublishable(files("../FentLib/build/libs/fentlib-testerino-dev.jar"))
-    devOnlyNonPublishable("org.fentanylsolutions.tabfaces:TabFaces:1.0.16")
+    implementation("industries.angelic.angellib:AngelLib:1.0.0:dev")
+    //devOnlyNonPublishable(files("../AngelLib/build/libs/angellib-testerino-dev.jar"))
+    // Last published TabFaces; the compatibility bridge supports both package namespaces.
+    runtimeOnlyNonPublishable("org.fentanylsolutions.tabfaces:TabFaces:1.0.16")
     compileOnly("com.github.GTNewHorizons:ServerUtilities:2.4.3:dev")
-    //compileOnly(files("../TabFaces/build/classes/java/main"))
 
     shadowImplementation("org.joml:joml:1.10.9")
     /* Fixes the mod menu being broken ingame, allows for quick config testing */

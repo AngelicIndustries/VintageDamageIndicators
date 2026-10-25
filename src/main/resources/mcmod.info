@@ -6,7 +6,7 @@
 		"description": "Minecraft mod for retro-themed damage indicators. Backport of Retro Damage Indicators.",
 		"version": "${modVersion}",
 		"mcversion": "${minecraftVersion}",
-		"url": "https://github.com/JackOfNoneTrades/VintageDamageIndicators",
+		"url": "https://github.com/AngelicIndustries/VintageDamageIndicators",
 		"updateUrl": "",
 		"authorList": ["jack"],
 		"credits": "AlexModguy",
