@@ -55,6 +55,9 @@ public final class EyesCompatHelper {
 
     private static final class EyesBridge {
 
+        // Eyes in the Shadows 0.0.3 stores the render target in DataWatcher slot 23.
+        private static final int TARGET_ID_WATCHER_INDEX = 23;
+
         private EyesBridge() {}
 
         private static boolean isEyesEntity(EntityLivingBase entity) {
@@ -63,10 +66,9 @@ public final class EyesCompatHelper {
 
         private static int setTargetId(EntityLivingBase entity, int targetId) {
             EntityEyes eyes = (EntityEyes) entity;
-            int oldTargetId = eyes.getSyncDataCompound()
-                .getInteger("targetId");
-            eyes.getSyncDataCompound()
-                .setInteger("targetId", targetId);
+            int oldTargetId = eyes.getTargetId();
+            eyes.getDataWatcher()
+                .updateObject(TARGET_ID_WATCHER_INDEX, targetId);
             return oldTargetId;
         }
     }
