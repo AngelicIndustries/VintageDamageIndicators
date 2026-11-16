@@ -1,10 +1,15 @@
 package industries.angelic.vintagedamageindicators.gui.angelica;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -41,6 +46,7 @@ import industries.angelic.vintagedamageindicators.client.HudEntityRenderer;
 import industries.angelic.vintagedamageindicators.client.HudPreviewMath;
 import industries.angelic.vintagedamageindicators.client.HudPreviewWorld;
 import industries.angelic.vintagedamageindicators.client.PreviewEntityFactory;
+import industries.angelic.vintagedamageindicators.client.PreviewFit;
 import industries.angelic.vintagedamageindicators.gui.GuiFactory;
 import industries.angelic.vintagedamageindicators.varinstances.VarInstanceCommon;
 
@@ -65,12 +71,19 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
     private static final int TOOLTIP_WIDTH = 214;
     private static final int PREVIEW_BACKGROUND_RGB = 0x8A929C;
     private static final int PREVIEW_BACKGROUND_ALPHA = 0xE0;
-    private static final int PREVIEW_TITLE_COLOR = 0xFFFFFFFF;
-    private static final int PREVIEW_DETAIL_COLOR = 0xFFB8B8B8;
     private static final int NAME_UNDERLAY_X = HudPreviewMath.HEALTH_BAR_X + 1;
     private static final int NAME_UNDERLAY_Y = 4;
     private static final int NAME_UNDERLAY_WIDTH = HudPreviewMath.HEALTH_BAR_WIDTH - 2;
     private static final int NAME_UNDERLAY_HEIGHT = 16;
+    /** A grid cell is the HUD's mob window, at its own size, with the name under it. */
+    private static final int GRID_WINDOW_X = 15;
+    private static final int GRID_WINDOW_Y = 3;
+    private static final int GRID_WINDOW_SIZE = 60;
+    private static final int GRID_LABEL_HEIGHT = 11;
+    private static final int GRID_GAP = 4;
+    private static final int GRID_FAILED_COLOR = 0xFFC04040;
+    private static final int GRID_HIDDEN_COLOR = 0xA0000000;
+    private static final String CHECK_REPORT = "config/vintagedamageindicators/preview-check.txt";
 
     private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(
         VintageDamageIndicators.MODID,
@@ -107,11 +120,26 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
     private int optionListY;
     private int optionListHeight;
     private String activeTooltip;
+    private int previewX;
+    private int previewY;
+    private boolean draggingPreview;
+    private int dragStartMouseX;
+    private int dragStartMouseY;
+    private float dragStartOffsetX;
+    private float dragStartOffsetY;
+    private final SodiumGuiButton gridButton;
+    private final SodiumGuiButton checkButton;
+    private boolean gridMode;
+    private int gridScrollRows;
+    private PreviewCheck check;
+    private String checkStatus;
 
     public EntityOverrideEditorScreen(GuiScreen parentScreen) {
         this.parentScreen = parentScreen;
         this.state = new EditorState(parentScreen instanceof GuiFactory.ConfigGui);
-        this.pageButton = new SodiumGuiButton("Entity Overrides", null);
+        this.pageButton = new SodiumGuiButton("Entity Overrides", () -> setGridMode(false));
+        this.gridButton = new SodiumGuiButton("All Mobs", () -> setGridMode(true));
+        this.checkButton = new SodiumGuiButton("Check All", this::startCheck);
         this.undoButton = new SodiumGuiButton("Undo", this::undoChanges);
         this.cancelButton = new SodiumGuiButton("Cancel", this::discardAndClose);
         this.saveButton = new SodiumGuiButton("Save", this::saveAndClose);
@@ -126,7 +154,8 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         this.searchField.setTextColor(0xFFFFFFFF);
         this.searchField.setText(this.state.search);
         this.searchField.setCanLoseFocus(true);
-        this.pageButton.setSelected(true);
+        this.pageButton.setSelected(!this.gridMode);
+        this.gridButton.setSelected(this.gridMode);
         this.rebuildOptionRows();
         this.updateLayout();
     }
@@ -153,10 +182,17 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         this.drawDefaultBackground();
         this.drawTopBar(mouseX, mouseY, partialTicks);
         this.drawMobList(mouseX, mouseY);
-        this.drawPreviewPane(mouseX, mouseY, partialTicks);
-        this.drawOptionRows(mouseX, mouseY);
+        if (this.gridMode) {
+            this.drawGrid(mouseX, mouseY);
+        } else {
+            this.drawPreviewPane(mouseX, mouseY, partialTicks);
+            this.drawOptionRows(mouseX, mouseY);
+        }
         this.drawBottomBar(mouseX, mouseY, partialTicks);
         this.drawTooltip(mouseX, mouseY);
+        if (this.check != null) {
+            this.check.step();
+        }
     }
 
     @Override
@@ -165,6 +201,8 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         boolean handled = false;
 
         if (this.pageButton.mouseClicked(mouseX, mouseY, mouseButton)
+            || this.gridButton.mouseClicked(mouseX, mouseY, mouseButton)
+            || this.gridMode && this.checkButton.mouseClicked(mouseX, mouseY, mouseButton)
             || this.undoButton.mouseClicked(mouseX, mouseY, mouseButton)
             || this.cancelButton.mouseClicked(mouseX, mouseY, mouseButton)
             || this.saveButton.mouseClicked(mouseX, mouseY, mouseButton)) {
@@ -185,8 +223,23 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
             handled = this.clickMobList(mouseX, mouseY, mouseButton);
         }
 
-        if (!handled && SodiumGui
-            .isInside(mouseX, mouseY, this.rightX, this.optionListY, this.rightWidth, this.optionListHeight)) {
+        if (!handled && this.gridMode) {
+            handled = this.clickGrid(mouseX, mouseY, mouseButton);
+        }
+
+        if (!handled && !this.gridMode && mouseButton == 0 && isOverPreviewWindow(mouseX, mouseY)) {
+            VarInstanceCommon.EntityOverride override = this.state.getOrCreateSelectedOverride();
+            this.draggingPreview = true;
+            this.dragStartMouseX = mouseX;
+            this.dragStartMouseY = mouseY;
+            this.dragStartOffsetX = this.state.previewChild ? override.babyXOffset : override.xOffset;
+            this.dragStartOffsetY = this.state.previewChild ? override.babyYOffset : override.yOffset;
+            handled = true;
+        }
+
+        if (!handled && !this.gridMode
+            && SodiumGui
+                .isInside(mouseX, mouseY, this.rightX, this.optionListY, this.rightWidth, this.optionListHeight)) {
             handled = this.clickOptionRows(mouseX, mouseY, mouseButton);
         }
     }
@@ -229,6 +282,29 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         if (wheel == 0) {
             return;
         }
+        if (!this.gridMode && isOverPreviewWindow(this.lastMouseX, this.lastMouseY)) {
+            resizePreview(wheel);
+            return;
+        }
+        if (!this.gridMode && this.lastMouseX >= this.rightX + this.rightWidth / 2
+            && SodiumGui.isInside(
+                this.lastMouseX,
+                this.lastMouseY,
+                this.rightX,
+                this.optionListY,
+                this.rightWidth,
+                this.optionListHeight)) {
+            int rowIndex = this.optionScroll.getRowAt(this.lastMouseY, this.optionListY, this.optionRows.size());
+            if (rowIndex >= 0 && this.optionRows.get(rowIndex)
+                .scrolled(wheel, isShiftKeyDown())) {
+                return;
+            }
+        }
+        if (this.gridMode && this.lastMouseX >= this.rightX) {
+            this.gridScrollRows = Math
+                .max(0, Math.min(getMaxGridScroll(), this.gridScrollRows - Integer.signum(wheel)));
+            return;
+        }
         if (SodiumGui.isInside(
             this.lastMouseX,
             this.lastMouseY,
@@ -262,6 +338,19 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
             this.dragScrollbar(mouseY);
             return;
         }
+        if (mouseButton == 0 && this.draggingPreview) {
+            VarInstanceCommon.EntityOverride override = this.state.getOrCreateSelectedOverride();
+            float x = this.dragStartOffsetX + (mouseX - this.dragStartMouseX);
+            float y = this.dragStartOffsetY + (mouseY - this.dragStartMouseY);
+            if (this.state.previewChild) {
+                override.babyXOffset = x;
+                override.babyYOffset = y;
+            } else {
+                override.xOffset = x;
+                override.yOffset = y;
+            }
+            return;
+        }
         super.mouseClickMove(mouseX, mouseY, mouseButton, timeSinceLastClick);
     }
 
@@ -272,6 +361,7 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
                 this.draggingScrollState.endDrag();
                 this.draggingScrollState = null;
             }
+            this.draggingPreview = false;
         }
         super.mouseMovedOrUp(mouseX, mouseY, mouseButton);
     }
@@ -295,7 +385,7 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         this.rightY = CONTENT_TOP;
         this.leftListY = this.leftY + SEARCH_HEIGHT + SECTION_GAP;
         this.leftListHeight = Math.max(SodiumGui.ROW_HEIGHT, this.height - this.leftListY - BOTTOM_BAR_HEIGHT);
-        this.optionListY = this.rightY + HudPreviewMath.PANEL_HEIGHT + SECTION_GAP + 26;
+        this.optionListY = this.rightY + HudPreviewMath.PANEL_HEIGHT + SECTION_GAP;
         this.optionListHeight = Math.max(SodiumGui.ROW_HEIGHT, this.height - this.optionListY - BOTTOM_BAR_HEIGHT);
 
         this.searchField.xPosition = this.leftX + 6;
@@ -305,6 +395,10 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
 
         int pageWidth = 16 + this.fontRendererObj.getStringWidth(this.pageButton.getLabel());
         this.pageButton.setBounds(OUTER_PADDING, PAGE_BUTTON_Y, pageWidth, 18);
+        int gridWidth = 16 + this.fontRendererObj.getStringWidth(this.gridButton.getLabel());
+        this.gridButton.setBounds(OUTER_PADDING + pageWidth + 4, PAGE_BUTTON_Y, gridWidth, 18);
+        this.checkButton.setBounds(OUTER_PADDING, this.height - 26, 72, 20);
+        this.checkButton.setEnabled(this.check == null);
 
         this.saveButton.setBounds(this.width - 73, this.height - 26, 65, 20);
         this.cancelButton.setBounds(this.width - 142, this.height - 26, 65, 20);
@@ -326,7 +420,8 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
 
     private void drawTopBar(int mouseX, int mouseY, float partialTicks) {
         this.pageButton.render(this.fontRendererObj, mouseX, mouseY);
-        int titleX = this.pageButton.getX() + this.pageButton.getWidth() + COLUMN_GAP;
+        this.gridButton.render(this.fontRendererObj, mouseX, mouseY);
+        int titleX = this.gridButton.getX() + this.gridButton.getWidth() + COLUMN_GAP;
         int titleWidth = Math.max(0, this.width - titleX - OUTER_PADDING);
         String selected = SodiumGui.ellipsize(this.fontRendererObj, this.state.getWindowTitle(), titleWidth);
         this.fontRendererObj.drawString(
@@ -371,10 +466,23 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
             if (selected) {
                 drawRect(this.leftX, y, this.leftX + 2, y + SodiumGui.ROW_HEIGHT, SodiumGui.getDefaultAccentColor());
             }
+            VarInstanceCommon.EntityOverride override = this.state.overridesByClassName.get(option.className);
+            boolean hidden = override != null && !override.enable;
             String label = this.state.getDisplayName(option);
-            label = SodiumGui.ellipsize(this.fontRendererObj, label, rowWidth - 12);
-            this.fontRendererObj
-                .drawString(label, this.leftX + TEXT_PADDING, y + 5, selected ? 0xFFFFFFFF : 0xFFE0E0E0);
+            label = SodiumGui.ellipsize(this.fontRendererObj, label, rowWidth - 16);
+            this.fontRendererObj.drawString(
+                label,
+                this.leftX + TEXT_PADDING,
+                y + 5,
+                hidden ? 0xFF808080 : selected ? 0xFFFFFFFF : 0xFFE0E0E0);
+            if (override != null && !hidden) {
+                SodiumGui.drawFlatBox(
+                    this.leftX + rowWidth - 7,
+                    y + SodiumGui.ROW_HEIGHT / 2 - 1,
+                    3,
+                    3,
+                    SodiumGui.getDefaultAccentColor());
+            }
             if (hovered) {
                 this.activeTooltip = option.className;
             }
@@ -415,25 +523,11 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
     private void drawPreviewPane(int mouseX, int mouseY, float partialTicks) {
         int previewX = this.rightX + Math.max(0, (this.rightWidth - HudPreviewMath.PANEL_WIDTH) / 2);
         int previewY = this.rightY;
+        this.previewX = previewX;
+        this.previewY = previewY;
         drawHudPreview(previewX, previewY);
-
-        int rowY = previewY + HudPreviewMath.PANEL_HEIGHT + SECTION_GAP;
-        String registryName = this.state.getSelectedOption().registryName;
-        String className = this.state.getSelectedOption().className;
-        SodiumGui.drawFlatBox(this.rightX, rowY, this.rightWidth, SodiumGui.ROW_HEIGHT, SodiumGui.ROW_IDLE_COLOR);
-        this.fontRendererObj.drawString(
-            SodiumGui.ellipsize(this.fontRendererObj, registryName, Math.max(20, this.rightWidth / 2 - 10)),
-            this.rightX + TEXT_PADDING,
-            rowY + 5,
-            PREVIEW_TITLE_COLOR);
-        String detail = SodiumGui.ellipsize(this.fontRendererObj, className, Math.max(20, this.rightWidth / 2 - 10));
-        this.fontRendererObj.drawString(
-            detail,
-            this.rightX + this.rightWidth - this.fontRendererObj.getStringWidth(detail) - TEXT_PADDING,
-            rowY + 5,
-            PREVIEW_DETAIL_COLOR);
-        if (SodiumGui.isInside(mouseX, mouseY, this.rightX, rowY, this.rightWidth, SodiumGui.ROW_HEIGHT)) {
-            this.activeTooltip = className;
+        if (isOverPreviewWindow(mouseX, mouseY)) {
+            this.activeTooltip = "Drag to move the mob, scroll to resize it. Hold Shift for small steps.";
         }
     }
 
@@ -519,9 +613,248 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
     }
 
     private void drawBottomBar(int mouseX, int mouseY, float partialTicks) {
+        if (this.gridMode) {
+            this.checkButton.render(this.fontRendererObj, mouseX, mouseY);
+            if (this.checkStatus != null) {
+                String status = SodiumGui.ellipsize(
+                    this.fontRendererObj,
+                    this.checkStatus,
+                    this.undoButton.getX() - this.checkButton.getX() - this.checkButton.getWidth() - 12);
+                this.fontRendererObj.drawString(
+                    status,
+                    this.checkButton.getX() + this.checkButton.getWidth() + 6,
+                    this.height - 20,
+                    0xFFE0E0E0);
+            }
+        }
         this.undoButton.render(this.fontRendererObj, mouseX, mouseY);
         this.cancelButton.render(this.fontRendererObj, mouseX, mouseY);
         this.saveButton.render(this.fontRendererObj, mouseX, mouseY);
+    }
+
+    private void setGridMode(boolean grid) {
+        this.gridMode = grid;
+        this.pageButton.setSelected(!grid);
+        this.gridButton.setSelected(grid);
+    }
+
+    private int getGridColumns() {
+        return Math.max(1, (this.rightWidth + GRID_GAP) / (GRID_WINDOW_SIZE + GRID_GAP));
+    }
+
+    private int getGridVisibleRows() {
+        int listHeight = this.height - CONTENT_TOP - BOTTOM_BAR_HEIGHT;
+        return Math.max(1, (listHeight + GRID_GAP) / (GRID_WINDOW_SIZE + GRID_LABEL_HEIGHT + GRID_GAP));
+    }
+
+    private int getMaxGridScroll() {
+        int rows = (this.state.getFilteredOptions()
+            .size() + getGridColumns() - 1) / getGridColumns();
+        return Math.max(0, rows - getGridVisibleRows());
+    }
+
+    /** Every mob that matches the search, each in the HUD's mob window, so badly fitted ones stand out. */
+    private void drawGrid(int mouseX, int mouseY) {
+        List<EntityOption> options = this.state.getFilteredOptions();
+        this.gridScrollRows = Math.min(this.gridScrollRows, getMaxGridScroll());
+        int columns = getGridColumns();
+        int first = this.gridScrollRows * columns;
+        int end = Math.min(options.size(), first + getGridVisibleRows() * columns);
+        for (int i = first; i < end; i++) {
+            int cell = i - first;
+            int x = this.rightX + cell % columns * (GRID_WINDOW_SIZE + GRID_GAP);
+            int y = CONTENT_TOP + cell / columns * (GRID_WINDOW_SIZE + GRID_LABEL_HEIGHT + GRID_GAP);
+            EntityOption option = options.get(i);
+            drawGridCell(option, x, y);
+            if (SodiumGui.isInside(mouseX, mouseY, x, y, GRID_WINDOW_SIZE, GRID_WINDOW_SIZE + GRID_LABEL_HEIGHT)) {
+                SodiumGui.drawRectOutline(x - 1, y - 1, GRID_WINDOW_SIZE + 2, GRID_WINDOW_SIZE + 2, 0xFFFFFFFF);
+                this.activeTooltip = this.state.getDisplayName(option) + "\n" + option.className;
+            }
+        }
+    }
+
+    private void drawGridCell(EntityOption option, int x, int y) {
+        Minecraft minecraft = Minecraft.getMinecraft();
+        SodiumGui.drawFlatBox(x, y, GRID_WINDOW_SIZE, GRID_WINDOW_SIZE, 0xFF8A929C);
+        EntityLivingBase entity = this.state.getGridEntity(option, minecraft);
+        VarInstanceCommon.EntityOverride override = this.state.overridesByClassName.get(option.className);
+        boolean failed = entity == null || HudEntityRenderer.hasRenderFailed(entity.getClass());
+        if (entity != null && !failed) {
+            HudPreviewMath.PreviewSettings preview = HudPreviewMath
+                .resolvePreviewSettings(entity, override, this.state.previewYaw, this.state.previewPitch);
+            SodiumGui.beginScissor(minecraft, x, y, GRID_WINDOW_SIZE, GRID_WINDOW_SIZE);
+            GL11.glPushMatrix();
+            // The window sits this far into the HUD panel, so the mob lands where it would there
+            GL11.glTranslatef(x - GRID_WINDOW_X, y - GRID_WINDOW_Y, 0.0F);
+            HudEntityRenderer
+                .drawEntity(preview.x, preview.y, preview.scale, preview.yaw, preview.pitch, preview.roll, entity);
+            GL11.glPopMatrix();
+            SodiumGui.endScissor();
+            GL11.glEnable(GL11.GL_TEXTURE_2D);
+            GL11.glDisable(GL11.GL_DEPTH_TEST);
+            GL11.glDisable(GL11.GL_LIGHTING);
+            GL11.glEnable(GL11.GL_BLEND);
+            GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+            OpenGlHelper.setActiveTexture(OpenGlHelper.defaultTexUnit);
+        }
+        if (failed) {
+            SodiumGui.drawRectOutline(x, y, GRID_WINDOW_SIZE, GRID_WINDOW_SIZE, GRID_FAILED_COLOR);
+            this.fontRendererObj
+                .drawString("!", x + GRID_WINDOW_SIZE / 2 - 1, y + GRID_WINDOW_SIZE / 2 - 4, GRID_FAILED_COLOR);
+        }
+        if (override != null && !override.enable) {
+            SodiumGui.drawFlatBox(x, y, GRID_WINDOW_SIZE, GRID_WINDOW_SIZE, GRID_HIDDEN_COLOR);
+            this.fontRendererObj.drawString("hidden", x + 2, y + 2, 0xFFAAAAAA);
+        } else if (override != null) {
+            SodiumGui.drawFlatBox(x + GRID_WINDOW_SIZE - 5, y + 2, 3, 3, SodiumGui.getDefaultAccentColor());
+        }
+        String label = SodiumGui.ellipsize(this.fontRendererObj, this.state.getDisplayName(option), GRID_WINDOW_SIZE);
+        this.fontRendererObj.drawString(label, x, y + GRID_WINDOW_SIZE + 2, 0xFFE0E0E0);
+    }
+
+    private boolean clickGrid(int mouseX, int mouseY, int mouseButton) {
+        if (mouseButton != 0 || mouseX < this.rightX) {
+            return false;
+        }
+        List<EntityOption> options = this.state.getFilteredOptions();
+        int columns = getGridColumns();
+        int column = (mouseX - this.rightX) / (GRID_WINDOW_SIZE + GRID_GAP);
+        int row = (mouseY - CONTENT_TOP) / (GRID_WINDOW_SIZE + GRID_LABEL_HEIGHT + GRID_GAP);
+        if (column >= columns || row < 0 || row >= getGridVisibleRows() || mouseY < CONTENT_TOP) {
+            return false;
+        }
+        int index = (this.gridScrollRows + row) * columns + column;
+        if (index >= options.size()) {
+            return false;
+        }
+        this.state.select(options.get(index));
+        this.rebuildOptionRows();
+        this.optionScroll.setScroll(0.0F, SodiumGui.getContentHeight(this.optionRows.size()), this.optionListHeight);
+        setGridMode(false);
+        SodiumGuiButton.playClickSound();
+        return true;
+    }
+
+    private void startCheck() {
+        try {
+            this.check = new PreviewCheck(new File(Minecraft.getMinecraft().mcDataDir, CHECK_REPORT));
+            this.checkStatus = "Checking...";
+        } catch (IOException e) {
+            this.checkStatus = "Couldn't write " + CHECK_REPORT;
+        }
+    }
+
+    /**
+     * Spawns, measures and draws every mob in turn, one a frame, logging each to the report. The mob's name is
+     * written before it's tried, so if one brings the game down, the report's last line names it.
+     */
+    private final class PreviewCheck {
+
+        private final PrintWriter out;
+        private int index;
+        private int spawnFailed;
+        private int drawFailed;
+        private int drewNothing;
+
+        private PreviewCheck(File report) throws IOException {
+            File parent = report.getParentFile();
+            if (parent != null) {
+                parent.mkdirs();
+            }
+            this.out = new PrintWriter(new FileWriter(report));
+            this.out.println(
+                "# Every living mob, spawned without a world and drawn as the HUD draws it. Fit is the drawing's size in"
+                    + " blocks at the HUD's angle.");
+        }
+
+        private void step() {
+            List<EntityOption> options = EntityOverrideEditorScreen.this.state.options;
+            if (this.index >= options.size()) {
+                finish(options.size());
+                return;
+            }
+            EntityOption option = options.get(this.index++);
+            this.out.println("checking " + option.className);
+            this.out.flush();
+            long start = System.nanoTime();
+            EntityLivingBase entity = EntityOverrideEditorScreen.this.state
+                .createPreviewEntity(option, Minecraft.getMinecraft());
+            String result;
+            if (entity == null) {
+                this.spawnFailed++;
+                result = "SPAWN FAILED";
+            } else {
+                VarInstanceCommon.EntityOverride override = EntityOverrideEditorScreen.this.state.overridesByClassName
+                    .get(option.className);
+                float yaw = Config.hudEntityYaw + (override != null ? override.yawOffset : 0.0F);
+                float pitch = Config.hudEntityPitch + (override != null ? override.pitchOffset : 0.0F);
+                float roll = override != null ? override.rollOffset : 0.0F;
+                PreviewFit.Bounds bounds = PreviewFit.get(entity, false, yaw, pitch, roll);
+                if (HudEntityRenderer.hasRenderFailed(entity.getClass())) {
+                    this.drawFailed++;
+                    result = "DRAW FAILED";
+                } else if (bounds == null) {
+                    this.drewNothing++;
+                    result = "DREW NOTHING";
+                } else {
+                    result = String.format(
+                        Locale.ROOT,
+                        "ok, fit %.2f x %.2f, hitbox %.2f x %.2f",
+                        bounds.width(),
+                        bounds.height(),
+                        entity.width,
+                        entity.height);
+                }
+            }
+            this.out.println(
+                String.format(
+                    Locale.ROOT,
+                    "%s %s (%s), %d ms",
+                    result,
+                    option.className,
+                    option.registryName,
+                    (System.nanoTime() - start) / 1000000L));
+            this.out.flush();
+            EntityOverrideEditorScreen.this.checkStatus = "Checking " + this.index + " of " + options.size() + "...";
+        }
+
+        private void finish(int total) {
+            String summary = String.format(
+                Locale.ROOT,
+                "Checked %d mobs: %d failed to spawn, %d failed to draw, %d drew nothing. Report in %s",
+                total,
+                this.spawnFailed,
+                this.drawFailed,
+                this.drewNothing,
+                CHECK_REPORT);
+            this.out.println("# " + summary);
+            this.out.close();
+            EntityOverrideEditorScreen.this.checkStatus = summary;
+            EntityOverrideEditorScreen.this.check = null;
+        }
+    }
+
+    /** The HUD panel's mob window in the preview, where dragging moves the mob and scrolling resizes it. */
+    private boolean isOverPreviewWindow(int mouseX, int mouseY) {
+        return SodiumGui.isInside(
+            mouseX,
+            mouseY,
+            this.previewX + GRID_WINDOW_X,
+            this.previewY + GRID_WINDOW_Y,
+            GRID_WINDOW_SIZE,
+            GRID_WINDOW_SIZE);
+    }
+
+    /** Grows or shrinks the shown mob by 5% a notch, 1% with Shift, for the age shown. */
+    private void resizePreview(int wheel) {
+        VarInstanceCommon.EntityOverride override = this.state.getOrCreateSelectedOverride();
+        float factor = 1.0F + Integer.signum(wheel) * (isShiftKeyDown() ? 0.01F : 0.05F);
+        if (this.state.previewChild) {
+            float current = override.babyScaleFactor > 0.0F ? override.babyScaleFactor : HudPreviewMath.FIT_CHILD_SCALE;
+            override.babyScaleFactor = Math.round(current * factor * 1000.0F) / 1000.0F;
+        } else {
+            override.scaleFactor = Math.round(scaleOrOne(override.scaleFactor) * factor * 1000.0F) / 1000.0F;
+        }
     }
 
     private void drawHudPreview(int x, int y) {
@@ -709,132 +1042,122 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         this.optionRows.add(
             new ToggleRow(
                 "Enabled",
-                "Whether this override is active for the selected mob.",
+                "Off hides this mob from the HUD.",
                 () -> this.state.getSelectedOverrideOrDefault().enable,
                 value -> this.state.getOrCreateSelectedOverride().enable = value));
         this.optionRows.add(
+            new TextRow(
+                "Name",
+                "The name the HUD shows.",
+                () -> this.state.getSelectedOverrideOrDefault().displayName == null ? ""
+                    : this.state.getSelectedOverrideOrDefault().displayName,
+                value -> this.state.getOrCreateSelectedOverride().displayName = value,
+                false));
+        this.optionRows.add(new MobTypeRow("Mob Type", "The icon shown beside the mob."));
+        this.optionRows.add(
+            new CycleRow(
+                "Preview Age",
+                "Shows the mob grown or as a child. The size and offsets below change for the age shown.",
+                () -> this.state.previewChild ? "Child" : "Adult",
+                direction -> this.state.previewChild = !this.state.previewChild));
+        this.optionRows.add(
+            new TextRow(
+                "Scale",
+                "Size against the automatic fit, which fills the window: 1 is the fit. Scroll over the preview to change it.",
+                () -> formatFloat(scaleOrOne(this.state.getSelectedOverrideOrDefault().scaleFactor)),
+                value -> this.state.getOrCreateSelectedOverride().scaleFactor = parseFloat(value),
+                0.05F));
+        this.optionRows.add(
+            new TextRow(
+                "X Offset",
+                "Pixels from the automatic spot. Drag the mob in the preview to move it.",
+                () -> formatFloat(this.state.getSelectedOverrideOrDefault().xOffset),
+                value -> this.state.getOrCreateSelectedOverride().xOffset = parseFloat(value),
+                1.0F));
+        this.optionRows.add(
+            new TextRow(
+                "Y Offset",
+                "Pixels from the automatic spot, where the mob stands on the window's floor. Drag the mob to move it.",
+                () -> formatFloat(this.state.getSelectedOverrideOrDefault().yOffset),
+                value -> this.state.getOrCreateSelectedOverride().yOffset = parseFloat(value),
+                1.0F));
+        this.optionRows.add(
+            new TextRow(
+                "Child Scale",
+                "A child's size against the window it would fill; 0.6 when not set.",
+                () -> formatFloat(this.state.getSelectedOverrideOrDefault().babyScaleFactor),
+                value -> this.state.getOrCreateSelectedOverride().babyScaleFactor = parseFloat(value),
+                0.05F));
+        this.optionRows.add(
+            new TextRow(
+                "Child X Offset",
+                "Pixels from a child's automatic spot.",
+                () -> formatFloat(this.state.getSelectedOverrideOrDefault().babyXOffset),
+                value -> this.state.getOrCreateSelectedOverride().babyXOffset = parseFloat(value),
+                1.0F));
+        this.optionRows.add(
+            new TextRow(
+                "Child Y Offset",
+                "Pixels from a child's automatic spot.",
+                () -> formatFloat(this.state.getSelectedOverrideOrDefault().babyYOffset),
+                value -> this.state.getOrCreateSelectedOverride().babyYOffset = parseFloat(value),
+                1.0F));
+        this.optionRows.add(
+            new TextRow(
+                "Yaw Offset",
+                "Turns this mob further left or right, for models drawn facing an odd way.",
+                () -> formatFloat(this.state.getSelectedOverrideOrDefault().yawOffset),
+                value -> this.state.getOrCreateSelectedOverride().yawOffset = parseFloat(value),
+                5.0F));
+        this.optionRows.add(
+            new TextRow(
+                "Pitch Offset",
+                "Tilts this mob forward or back.",
+                () -> formatFloat(this.state.getSelectedOverrideOrDefault().pitchOffset),
+                value -> this.state.getOrCreateSelectedOverride().pitchOffset = parseFloat(value),
+                5.0F));
+        this.optionRows.add(
+            new TextRow(
+                "Roll Offset",
+                "Rolls this mob sideways, like a fish drawn lying on its side.",
+                () -> formatFloat(this.state.getSelectedOverrideOrDefault().rollOffset),
+                value -> this.state.getOrCreateSelectedOverride().rollOffset = parseFloat(value),
+                5.0F));
+        this.optionRows.add(
             new ToggleRow(
                 "Popoff",
-                "Whether damage popoff particles are shown for this mob.",
+                "Damage numbers popping off this mob.",
                 () -> this.state.getSelectedOverrideOrDefault().popoffEnabled,
                 value -> this.state.getOrCreateSelectedOverride().popoffEnabled = value));
         this.optionRows.add(
             new ToggleRow(
                 "Append Baby Name",
-                "Adds Baby before the display name when previewing a child entity.",
+                "Puts Baby before a child's name.",
                 () -> this.state.getSelectedOverrideOrDefault().appendBabyName,
                 value -> this.state.getOrCreateSelectedOverride().appendBabyName = value));
         this.optionRows.add(
             new TextRow(
-                "Name",
-                "Display name used by the HUD.",
-                () -> this.state.getSelectedOverrideOrDefault().displayName == null ? ""
-                    : this.state.getSelectedOverrideOrDefault().displayName,
-                value -> this.state.getOrCreateSelectedOverride().displayName = value,
-                false));
-        this.optionRows.add(
-            new CycleRow(
-                "Preview Age",
-                "Toggles the live preview between adult and child forms.",
-                () -> this.state.previewChild ? "Child" : "Adult",
-                direction -> this.state.previewChild = !this.state.previewChild));
-        this.optionRows.add(new MobTypeRow("Mob Type", "Icon category shown on the HUD."));
-        this.optionRows.add(
-            new TextRow(
                 "Preview Yaw",
-                "Base yaw used by the HUD preview and live HUD render.",
+                "The angle every mob is shown at, in the HUD too.",
                 this.state::previewYawText,
                 value -> this.state.previewYaw = parseFloat(value),
-                true));
+                5.0F));
         this.optionRows.add(
             new TextRow(
                 "Preview Pitch",
-                "Base pitch used by the HUD preview and live HUD render.",
+                "The tilt every mob is shown at, in the HUD too.",
                 this.state::previewPitchText,
                 value -> this.state.previewPitch = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Adult Scale Mult",
-                "Multiplier applied to the selected adult entity render scale.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().scaleFactor),
-                value -> this.state.getOrCreateSelectedOverride().scaleFactor = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Adult X Offset",
-                "Horizontal preview/render offset for adult entities.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().xOffset),
-                value -> this.state.getOrCreateSelectedOverride().xOffset = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Adult Y Offset",
-                "Vertical preview/render offset for adult entities.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().yOffset),
-                value -> this.state.getOrCreateSelectedOverride().yOffset = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Baby Scale Mult",
-                "Multiplier applied to child entity render scale.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().babyScaleFactor),
-                value -> this.state.getOrCreateSelectedOverride().babyScaleFactor = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Baby X Offset",
-                "Horizontal preview/render offset for child entities.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().babyXOffset),
-                value -> this.state.getOrCreateSelectedOverride().babyXOffset = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Baby Y Offset",
-                "Vertical preview/render offset for child entities.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().babyYOffset),
-                value -> this.state.getOrCreateSelectedOverride().babyYOffset = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Baby Fallback Mult",
-                "Fallback child scale multiplier for entities without a dedicated value.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().babyScaleModifier),
-                value -> this.state.getOrCreateSelectedOverride().babyScaleModifier = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Yaw Offset",
-                "Additional yaw offset for this mob.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().yawOffset),
-                value -> this.state.getOrCreateSelectedOverride().yawOffset = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Pitch Offset",
-                "Additional pitch offset for this mob.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().pitchOffset),
-                value -> this.state.getOrCreateSelectedOverride().pitchOffset = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Roll Offset",
-                "Additional roll offset for this mob.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().rollOffset),
-                value -> this.state.getOrCreateSelectedOverride().rollOffset = parseFloat(value),
-                true));
-        this.optionRows.add(
-            new TextRow(
-                "Size Modifier",
-                "Applies an entity-height based scale adjustment.",
-                () -> formatFloat(this.state.getSelectedOverrideOrDefault().sizeModifier),
-                value -> this.state.getOrCreateSelectedOverride().sizeModifier = parseFloat(value),
-                true));
-        this.optionRows
-            .add(new ButtonRow("Reset Selected Override", "Removes custom values for the selected mob.", () -> {
-                this.state.resetSelectedOverride();
-                this.rebuildOptionRows();
-            }));
+                5.0F));
+        this.optionRows.add(new ButtonRow("Reset Selected Override", "Removes this mob's override.", () -> {
+            this.state.resetSelectedOverride();
+            this.rebuildOptionRows();
+        }));
+    }
+
+    /** Scale fields count 0, not set, as 1. */
+    private static float scaleOrOne(float scale) {
+        return scale > 0.0F ? scale : 1.0F;
     }
 
     private void undoChanges() {
@@ -1011,6 +1334,11 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
             return false;
         }
 
+        /** A mouse wheel notch over the row; true if it changed something. */
+        protected boolean scrolled(int wheel, boolean fine) {
+            return false;
+        }
+
         protected void update() {}
 
         protected void clearFocus() {}
@@ -1124,10 +1452,23 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         private final TextSetter setter;
         private final GuiTextField field;
 
+        /** How much a wheel notch changes a number; 0 for text. */
+        private final float step;
+
+        private TextRow(String label, String tooltip, TextGetter getter, TextSetter setter, float step) {
+            this(label, tooltip, getter, setter, true, step);
+        }
+
         private TextRow(String label, String tooltip, TextGetter getter, TextSetter setter, boolean numeric) {
+            this(label, tooltip, getter, setter, numeric, 0.0F);
+        }
+
+        private TextRow(String label, String tooltip, TextGetter getter, TextSetter setter, boolean numeric,
+            float step) {
             super(label, tooltip);
             this.getter = getter;
             this.setter = setter;
+            this.step = step;
             this.field = new GuiTextField(EntityOverrideEditorScreen.this.fontRendererObj, 0, 0, CONTROL_WIDTH, 14);
             this.field.setEnableBackgroundDrawing(false);
             this.field.setCanLoseFocus(true);
@@ -1178,6 +1519,18 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
         @Override
         protected void update() {
             this.field.updateCursorCounter();
+        }
+
+        @Override
+        protected boolean scrolled(int wheel, boolean fine) {
+            if (this.step <= 0.0F) {
+                return false;
+            }
+            float value = parseFloat(this.getter.get()) + Integer.signum(wheel) * this.step * (fine ? 0.2F : 1.0F);
+            String text = formatFloat(Math.round(value * 1000.0F) / 1000.0F);
+            this.setter.set(text);
+            this.field.setText(text);
+            return true;
         }
 
         @Override
@@ -1499,6 +1852,7 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
             VarInstanceCommon.EntityOverride override = this.overridesByClassName.get(option.className);
             if (override == null) {
                 override = new VarInstanceCommon.EntityOverride();
+                override.layout = VarInstanceCommon.EntityOverride.LAYOUT_FITTED;
                 override.className = option.className;
                 override.displayName = option.registryName;
                 override.type = getDetectedTypeForSelectedOption();
@@ -1550,6 +1904,11 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
             }
             if (fallback != null && !fallback.trim()
                 .isEmpty()) {
+                // Mobs are named by entity.<registry name>.name, the way a spawned one would be
+                String entityKey = "entity." + fallback + ".name";
+                if (StatCollector.canTranslate(entityKey)) {
+                    return StatCollector.translateToLocal(entityKey);
+                }
                 String localizedFallback = StatCollector.translateToLocal(fallback);
                 if (localizedFallback != null && !localizedFallback.trim()
                     .isEmpty()) {
@@ -1592,6 +1951,26 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
             int index = current.ordinal();
             index = Math.floorMod(index + direction, values.length);
             getOrCreateSelectedOverride().type = values[index];
+        }
+
+        private final Map<String, EntityLivingBase> gridEntities = new HashMap<>();
+
+        /** A mob for the grid, made once per class; null if it can't be made. */
+        private EntityLivingBase getGridEntity(EntityOption option, Minecraft minecraft) {
+            if (!this.gridEntities.containsKey(option.className)) {
+                EntityLivingBase entity = createPreviewEntity(option, minecraft);
+                // The grid shows grown mobs; spawning can roll a child, like a zombie's
+                if (entity instanceof EntityAgeable) {
+                    ((EntityAgeable) entity).setGrowingAge(0);
+                } else if (entity instanceof EntityZombie) {
+                    ((EntityZombie) entity).setChild(false);
+                }
+                if (entity != null) {
+                    applyCustomPreviewAgeState(entity, false);
+                }
+                this.gridEntities.put(option.className, entity);
+            }
+            return this.gridEntities.get(option.className);
         }
 
         private EntityLivingBase getPreviewEntity() {
