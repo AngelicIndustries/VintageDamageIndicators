@@ -29,13 +29,16 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import org.lwjgl.opengl.GL11;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import industries.angelic.vintagedamageindicators.Config;
 import industries.angelic.vintagedamageindicators.MobTypes;
 import industries.angelic.vintagedamageindicators.VintageDamageIndicators;
+import industries.angelic.vintagedamageindicators.client.DashboardHud;
 import industries.angelic.vintagedamageindicators.client.HudEntityRenderer;
 import industries.angelic.vintagedamageindicators.client.HudIndicatorState;
+import industries.angelic.vintagedamageindicators.client.HudOverlayLayout;
 import industries.angelic.vintagedamageindicators.client.HudPreviewMath;
 import industries.angelic.vintagedamageindicators.client.HudPreviewParticles;
 import industries.angelic.vintagedamageindicators.client.PotionIconRenderer;
@@ -85,6 +88,9 @@ public class HudEventHandler extends Gui {
         "textures/gui/potion_right_overlay.png");
     private static final ResourceLocation INVENTORY_TEXTURE = new ResourceLocation(
         "textures/gui/container/inventory.png");
+
+    /** Dashboard's HUD editor can move the panel; asked every frame, so checked once. */
+    public static final boolean DASHBOARD = Loader.isModLoaded("dashboard");
 
     private final WeakHashMap<EntityLivingBase, PotionStripData> potionStripCache = new WeakHashMap<>();
 
@@ -302,27 +308,19 @@ public class HudEventHandler extends Gui {
         boolean depthTestEnabled = GL11.glIsEnabled(GL11.GL_DEPTH_TEST);
         float scale = Config.hudIndicatorSize;
         int hudWidth = Math.max(PANEL_WIDTH, POTION_PANEL_X + potionStrip.stripWidth);
-        int x = Config.hudIndicatorAlignLeft ? Config.hudIndicatorPositionX
-            : resolution.getScaledWidth() - Math.round(hudWidth * scale) - Config.hudIndicatorPositionX;
-        int y = Config.hudIndicatorAlignTop ? Config.hudIndicatorPositionY
-            : resolution.getScaledHeight() - Math.round(PANEL_HEIGHT * scale) - Config.hudIndicatorPositionY;
-        x = Math.max(0, x);
-        y = Math.max(0, y);
+        if (DASHBOARD && !DashboardHud.begin(resolution, hudWidth)) {
+            return;
+        }
+        HudOverlayLayout.OverlayRect rect = HudOverlayLayout
+            .getDrawnHudRect(resolution.getScaledWidth(), resolution.getScaledHeight(), hudWidth);
 
         GL11.glPushMatrix();
-        GL11.glTranslatef(x, y, 0.0F);
+        GL11.glTranslatef(rect.left, rect.top, 0.0F);
         GL11.glScalef(scale, scale, 1.0F);
 
         drawBackground(minecraft);
         drawEntityPreview(target, mobType);
-        HudPreviewParticles.render(
-            target,
-            minecraft.fontRenderer,
-            x,
-            y,
-            scale,
-            resolution.getScaledHeight(),
-            resolution.getScaleFactor());
+        HudPreviewParticles.render(target, minecraft.fontRenderer, resolution.getScaleFactor());
         drawFrame(minecraft);
         drawMobTypeIcon(minecraft, mobType);
         drawHealthBar(minecraft, target);
@@ -331,6 +329,9 @@ public class HudEventHandler extends Gui {
         drawPotionStrip(minecraft, minecraft.fontRenderer, potionStrip);
 
         GL11.glPopMatrix();
+        if (DASHBOARD) {
+            DashboardHud.end();
+        }
         if (depthTestEnabled) {
             GL11.glEnable(GL11.GL_DEPTH_TEST);
         } else {

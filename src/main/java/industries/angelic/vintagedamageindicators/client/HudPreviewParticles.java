@@ -1,5 +1,6 @@
 package industries.angelic.vintagedamageindicators.client;
 
+import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,12 +15,15 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.MathHelper;
 
+import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 
 import industries.angelic.vintagedamageindicators.Config;
 import industries.angelic.vintagedamageindicators.util.Util;
 
 public final class HudPreviewParticles {
+
+    private static final FloatBuffer MATRIX_BUF = BufferUtils.createFloatBuffer(16);
 
     private static final double BASE_X_SPEED = 0.001D;
     private static final double BASE_Z_SPEED = 0.001D;
@@ -128,8 +132,8 @@ public final class HudPreviewParticles {
         PARTICLES_BY_ENTITY.remove(entityId);
     }
 
-    public static void render(EntityLivingBase target, FontRenderer fontRenderer, int screenX, int screenY,
-        float hudScale, int scaledHeight, int guiScaleFactor) {
+    /** Draws them over the panel, which the current modelview has moved and scaled into place. */
+    public static void render(EntityLivingBase target, FontRenderer fontRenderer, int guiScaleFactor) {
         if (!Config.hudPreviewParticlesEnabled || target == null) {
             return;
         }
@@ -139,12 +143,22 @@ public final class HudPreviewParticles {
             return;
         }
 
-        int scissorX = Math.round((screenX + HudPreviewMath.PREVIEW_CLIP_X * hudScale) * guiScaleFactor);
-        int scissorWidth = Math.round(HudPreviewMath.PREVIEW_CLIP_WIDTH * hudScale * guiScaleFactor);
-        int scissorHeight = Math.round(HudPreviewMath.PREVIEW_CLIP_HEIGHT * hudScale * guiScaleFactor);
-        int scissorY = Math.round(
-            (scaledHeight - (screenY + (HudPreviewMath.PREVIEW_CLIP_Y + HudPreviewMath.PREVIEW_CLIP_HEIGHT) * hudScale))
-                * guiScaleFactor);
+        // The preview's clip box where the modelview puts it on screen, so it follows whatever placed the panel, like
+        // Dashboard's HUD editor, the same way HudEntityRenderer finds where to draw the mob
+        MATRIX_BUF.clear();
+        GL11.glGetFloat(GL11.GL_MODELVIEW_MATRIX, MATRIX_BUF);
+        float left = screenX(HudPreviewMath.PREVIEW_CLIP_X, HudPreviewMath.PREVIEW_CLIP_Y);
+        float top = screenY(HudPreviewMath.PREVIEW_CLIP_X, HudPreviewMath.PREVIEW_CLIP_Y);
+        float right = screenX(
+            HudPreviewMath.PREVIEW_CLIP_X + HudPreviewMath.PREVIEW_CLIP_WIDTH,
+            HudPreviewMath.PREVIEW_CLIP_Y + HudPreviewMath.PREVIEW_CLIP_HEIGHT);
+        float bottom = screenY(
+            HudPreviewMath.PREVIEW_CLIP_X + HudPreviewMath.PREVIEW_CLIP_WIDTH,
+            HudPreviewMath.PREVIEW_CLIP_Y + HudPreviewMath.PREVIEW_CLIP_HEIGHT);
+        int scissorX = Math.round(left * guiScaleFactor);
+        int scissorY = Math.round(Minecraft.getMinecraft().displayHeight - bottom * guiScaleFactor);
+        int scissorWidth = Math.round((right - left) * guiScaleFactor);
+        int scissorHeight = Math.round((bottom - top) * guiScaleFactor);
 
         GL11.glPushAttrib(GL11.GL_ENABLE_BIT | GL11.GL_SCISSOR_BIT | GL11.GL_COLOR_BUFFER_BIT);
         GL11.glEnable(GL11.GL_SCISSOR_TEST);
@@ -162,6 +176,15 @@ public final class HudPreviewParticles {
 
         GL11.glPopAttrib();
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+    }
+
+    /** A point of the panel in GUI pixels, through the modelview in MATRIX_BUF. */
+    private static float screenX(float x, float y) {
+        return MATRIX_BUF.get(0) * x + MATRIX_BUF.get(4) * y + MATRIX_BUF.get(12);
+    }
+
+    private static float screenY(float x, float y) {
+        return MATRIX_BUF.get(1) * x + MATRIX_BUF.get(5) * y + MATRIX_BUF.get(13);
     }
 
     private static void addParticle(int entityId, Particle particle) {

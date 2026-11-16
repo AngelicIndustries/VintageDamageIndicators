@@ -23,7 +23,7 @@ import industries.angelic.vintagedamageindicators.varinstances.VarInstanceCommon
     name = "Vintage Damage Indicators",
     acceptedMinecraftVersions = "[1.7.10]",
     acceptableRemoteVersions = "*",
-    dependencies = "required-after:angellib@[1.0.0,)",
+    dependencies = "required-after:angellib@[1.0.0,);after:dashboard@[1.0.2,)",
     guiFactory = "industries.angelic.vintagedamageindicators.gui.GuiFactory",
     customProperties = { @Mod.CustomProperty(k = "license", v = "LGPLv3"),
         @Mod.CustomProperty(

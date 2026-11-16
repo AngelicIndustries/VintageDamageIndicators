@@ -1,3 +1,6 @@
 vintagedamageindicators.configgui.title=Vintage Damage Indicators Config
 vintagedamageindicators.configgui.entity-display-overrides=Entity Display Overrides
 vintagedamageindicators.critical=Critical!
+dashboard.element.vintagedamageindicators.hud_indicator=HUD Indicator
+dashboard.element.vintagedamageindicators.hud_indicator.description=The mob you look at: its model, name, health and effects.
+dashboard.element.vintagedamageindicators.hud_indicator.own_settings=Vintage Damage Indicators config, Position HUD

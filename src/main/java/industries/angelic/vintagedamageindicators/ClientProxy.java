@@ -6,6 +6,7 @@ import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import industries.angelic.vintagedamageindicators.client.DashboardHud;
 import industries.angelic.vintagedamageindicators.command.OpenOverrideEditorCommand;
 import industries.angelic.vintagedamageindicators.event.HudEventHandler;
 import industries.angelic.vintagedamageindicators.event.ParticleEventHandler;
@@ -30,6 +31,10 @@ public class ClientProxy extends CommonProxy {
 
         ParticleEventHandler particleEventHandler = new ParticleEventHandler();
         MinecraftForge.EVENT_BUS.register(particleEventHandler);
+
+        if (HudEventHandler.DASHBOARD) {
+            DashboardHud.register();
+        }
 
         HudEventHandler hudEventHandler = new HudEventHandler();
         MinecraftForge.EVENT_BUS.register(hudEventHandler);

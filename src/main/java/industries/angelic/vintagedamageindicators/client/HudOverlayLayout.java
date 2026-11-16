@@ -36,6 +36,20 @@ public final class HudOverlayLayout {
             && VintageDamageIndicators.varInstanceClient.hudIndicatorState.getTargetEntity() != null;
     }
 
+    /**
+     * Where the panel is drawn, as wide as its content (the potion strip can widen it), before Dashboard moves it. The
+     * panel's own drawing and its Dashboard element both use this.
+     */
+    public static OverlayRect getDrawnHudRect(int screenWidth, int screenHeight, int contentWidth) {
+        int width = Math.round(contentWidth * Config.hudIndicatorSize);
+        int height = Math.round(HudPreviewMath.PANEL_HEIGHT * Config.hudIndicatorSize);
+        int x = Config.hudIndicatorAlignLeft ? Config.hudIndicatorPositionX
+            : screenWidth - width - Config.hudIndicatorPositionX;
+        int y = Config.hudIndicatorAlignTop ? Config.hudIndicatorPositionY
+            : screenHeight - height - Config.hudIndicatorPositionY;
+        return new OverlayRect(Math.max(0, x), Math.max(0, y), width, height);
+    }
+
     public static OverlayRect getConfiguredHudRect(int screenWidth, int screenHeight) {
         int width = Math.max(1, Math.round(HudPreviewMath.PANEL_WIDTH * Config.hudIndicatorSize));
         int height = Math.max(1, Math.round(HudPreviewMath.PANEL_HEIGHT * Config.hudIndicatorSize));
