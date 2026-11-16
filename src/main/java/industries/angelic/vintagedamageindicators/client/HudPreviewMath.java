@@ -35,6 +35,13 @@ public final class HudPreviewMath {
     public static final float DEFAULT_ADULT_SCALE_MULTIPLIER = 0.9F;
     public static final float DEFAULT_CHILD_SCALE_MODIFIER = 0.5F;
     public static final int DEFAULT_CHILD_Y_OFFSET = -4;
+    /** The part of the preview window a measured mob is fitted into, inside its frame. */
+    public static final int FIT_LEFT = 17;
+    public static final int FIT_RIGHT = 73;
+    public static final int FIT_TOP = 6;
+    public static final int FIT_FLOOR = 59;
+    /** A measured child is drawn this much smaller than the window it would fill, so it reads as young. */
+    public static final float FIT_CHILD_SCALE = 0.6F;
 
     private HudPreviewMath() {}
 
@@ -48,6 +55,10 @@ public final class HudPreviewMath {
         boolean vanillaChild = target.isChild();
         boolean customChild = isCustomChild(target);
         boolean child = vanillaChild || customChild;
+        PreviewSettings fitted = resolveFittedSettings(target, override, child, baseYaw, basePitch);
+        if (fitted != null) {
+            return fitted;
+        }
         PreviewTuning builtIn = getBuiltInPreviewTuning(target);
         float autoScale = getAutoScale(target);
         float scale = autoScale * builtIn.scaleMultiplier;
@@ -103,6 +114,47 @@ public final class HudPreviewMath {
         }
 
         return new PreviewSettings(x, y, Math.max(0.1F, scale), yaw, pitch, roll, autoScale, scale, builtIn);
+    }
+
+    /**
+     * The mob fitted into the window from how big it really draws (PreviewFit): as large as fits, centered across, its
+     * lowest point on the window's floor. Overrides scale and nudge it from there. Null when it can't be measured.
+     */
+    private static PreviewSettings resolveFittedSettings(EntityLivingBase target,
+        VarInstanceCommon.EntityOverride override, boolean child, float baseYaw, float basePitch) {
+        float yaw = baseYaw + (override != null ? override.yawOffset : 0.0F);
+        float pitch = basePitch + (override != null ? override.pitchOffset : 0.0F);
+        float roll = override != null ? override.rollOffset : 0.0F;
+        PreviewFit.Bounds bounds = PreviewFit.get(target, child, yaw, pitch, roll);
+        if (bounds == null || bounds.width() <= 0.0F || bounds.height() <= 0.0F) {
+            return null;
+        }
+        float fitScale = Math.min((FIT_RIGHT - FIT_LEFT) / bounds.width(), (FIT_FLOOR - FIT_TOP) / bounds.height());
+        float scale = fitScale;
+        float xOffset = 0.0F;
+        float yOffset = 0.0F;
+        if (child) {
+            if (override != null && override.babyScaleFactor > 0.0F) {
+                scale *= override.babyScaleFactor;
+            } else if (override != null && override.babyScaleModifier > 0.0F) {
+                scale *= override.babyScaleModifier;
+            } else {
+                scale *= FIT_CHILD_SCALE;
+            }
+            if (override != null) {
+                xOffset = override.babyXOffset;
+                yOffset = override.babyYOffset;
+            }
+        } else if (override != null) {
+            if (override.scaleFactor > 0.0F) {
+                scale *= override.scaleFactor;
+            }
+            xOffset = override.xOffset;
+            yOffset = override.yOffset;
+        }
+        int x = Math.round((FIT_LEFT + FIT_RIGHT) / 2.0F - bounds.centerX() * scale + xOffset);
+        int y = Math.round(FIT_FLOOR - bounds.bottom * scale + yOffset);
+        return new PreviewSettings(x, y, scale, yaw, pitch, roll, fitScale, scale, PreviewTuning.DEFAULT);
     }
 
     private static boolean isCustomChild(EntityLivingBase target) {

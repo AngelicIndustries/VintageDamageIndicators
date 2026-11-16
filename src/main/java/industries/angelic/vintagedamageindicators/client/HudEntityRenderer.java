@@ -63,6 +63,11 @@ public final class HudEntityRenderer {
         return dummyPlayer;
     }
 
+    /** Whether drawing this class threw once, so it isn't tried again. */
+    public static boolean hasRenderFailed(Class<?> entityClass) {
+        return RENDER_FAILED_CLASSES.contains(entityClass);
+    }
+
     public static void clearRenderFailedCache() {
         RENDER_FAILED_CLASSES.clear();
     }

@@ -180,6 +180,12 @@ public class VarInstanceCommon {
 
     public static class EntityOverride {
 
+        /**
+         * The layout made for the measured fit (PreviewFit). Older overrides had sizes and offsets for the hitbox
+         * estimate.
+         */
+        public static final int LAYOUT_FITTED = 1;
+
         public String className;
         public String displayName;
         public boolean appendBabyName;
@@ -197,6 +203,8 @@ public class VarInstanceCommon {
         public MobTypes type;
         public boolean popoffEnabled;
         public boolean enable;
+        /** Which preview layout the sizes and offsets were made for; missing in older files, so 0 there. */
+        public int layout;
 
         public EntityOverride() {
             this.type = MobTypes.UNKNOWN;
@@ -246,7 +254,30 @@ public class VarInstanceCommon {
             copy.type = type;
             copy.popoffEnabled = popoffEnabled;
             copy.enable = enable;
+            copy.layout = layout;
             return copy;
+        }
+
+        /**
+         * Drops sizes and offsets made for the hitbox estimate, which would push a measured fit around for nothing.
+         * Turns, names, types and switches stay.
+         *
+         * @return whether anything was made for the old layout
+         */
+        public boolean upgradeLayout() {
+            if (this.layout >= LAYOUT_FITTED) {
+                return false;
+            }
+            this.babyScaleModifier = 0.0F;
+            this.babyScaleFactor = 0.0F;
+            this.scaleFactor = 0.0F;
+            this.sizeModifier = 0.0F;
+            this.xOffset = 0.0F;
+            this.yOffset = 0.0F;
+            this.babyXOffset = 0.0F;
+            this.babyYOffset = 0.0F;
+            this.layout = LAYOUT_FITTED;
+            return true;
         }
 
         public String serialize() {

@@ -502,6 +502,15 @@ public class Config {
             copyDefaultOverridesFile(overridesFile);
         }
         entityOverrides = readEntityOverridesFile(overridesFile);
+        boolean upgraded = false;
+        for (VarInstanceCommon.EntityOverride override : entityOverrides) {
+            upgraded |= override.upgradeLayout();
+        }
+        if (upgraded) {
+            VintageDamageIndicators.LOG
+                .info("Dropped entity override sizes and offsets made for the old preview layout; mobs are now fitted");
+            saveEntityOverrides();
+        }
     }
 
     private static List<VarInstanceCommon.EntityOverride> readEntityOverridesFile(File file) {

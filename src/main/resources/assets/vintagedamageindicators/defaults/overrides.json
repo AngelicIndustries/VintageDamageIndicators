@@ -16,7 +16,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.passive.EntityChicken",
@@ -24,7 +25,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -35,7 +36,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityCaveSpider",
@@ -43,10 +45,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.9,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -54,7 +56,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityBlaze",
@@ -65,7 +68,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -73,7 +76,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityCreeper",
@@ -84,7 +88,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -92,7 +96,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.boss.EntityDragon",
@@ -100,10 +105,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -111,7 +116,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityGhast",
@@ -119,10 +125,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -20.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -130,7 +136,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityGiantZombie",
@@ -141,7 +148,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -149,7 +156,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityMagmaCube",
@@ -160,7 +168,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -168,7 +176,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.passive.EntityMooshroom",
@@ -176,7 +185,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.85,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -187,7 +196,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.passive.EntityOcelot",
@@ -198,15 +208,16 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -4.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.passive.EntityPig",
@@ -217,15 +228,16 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -6.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityPigZombie",
@@ -233,45 +245,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
-    "sizeModifier": 0.0,
-    "xOffset": 0.0,
-    "yOffset": 1.0,
-    "babyXOffset": 0.0,
-    "babyYOffset": 0.0,
-    "yawOffset": 0.0,
-    "pitchOffset": 0.0,
-    "rollOffset": 0.0,
-    "type": "UNDEAD",
-    "popoffEnabled": true,
-    "enable": true
-  },
-  {
-    "className": "net.minecraft.entity.monster.EntitySilverfish",
-    "displayName": "Silverfish",
-    "appendBabyName": false,
-    "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
-    "sizeModifier": 0.0,
-    "xOffset": 0.0,
-    "yOffset": -10.0,
-    "babyXOffset": 0.0,
-    "babyYOffset": 0.0,
-    "yawOffset": 0.0,
-    "pitchOffset": 0.0,
-    "rollOffset": 0.0,
-    "type": "ARTHROPOD_MONSTER",
-    "popoffEnabled": true,
-    "enable": true
-  },
-  {
-    "className": "net.minecraft.entity.monster.EntitySkeleton",
-    "displayName": "Skeleton",
-    "appendBabyName": false,
-    "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.0,
-    "scaleFactor": 0.9,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -282,7 +256,48 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
+  },
+  {
+    "className": "net.minecraft.entity.monster.EntitySilverfish",
+    "displayName": "Silverfish",
+    "appendBabyName": false,
+    "babyScaleModifier": 0.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
+    "sizeModifier": 0.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
+    "babyXOffset": 0.0,
+    "babyYOffset": 0.0,
+    "yawOffset": 0.0,
+    "pitchOffset": 0.0,
+    "rollOffset": 0.0,
+    "type": "ARTHROPOD_MONSTER",
+    "popoffEnabled": true,
+    "enable": true,
+    "layout": 1
+  },
+  {
+    "className": "net.minecraft.entity.monster.EntitySkeleton",
+    "displayName": "Skeleton",
+    "appendBabyName": false,
+    "babyScaleModifier": 0.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
+    "sizeModifier": 0.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
+    "babyXOffset": 0.0,
+    "babyYOffset": 0.0,
+    "yawOffset": 0.0,
+    "pitchOffset": 0.0,
+    "rollOffset": 0.0,
+    "type": "UNDEAD",
+    "popoffEnabled": true,
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntitySlime",
@@ -293,7 +308,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -301,7 +316,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntitySnowman",
@@ -309,7 +325,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.9,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -320,7 +336,8 @@
     "rollOffset": 0.0,
     "type": "GOLEM",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntitySpider",
@@ -331,7 +348,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -339,7 +356,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.passive.EntitySquid",
@@ -347,10 +365,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -28.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -358,7 +376,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.passive.EntityVillager",
@@ -366,18 +385,19 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.9,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 1.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -4.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "VILLAGER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityWitch",
@@ -385,10 +405,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -396,7 +416,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.passive.EntityWolf",
@@ -409,13 +430,14 @@
     "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -5.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityZombie",
@@ -423,18 +445,19 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.9,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 1.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -3.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "net.minecraft.entity.monster.EntityEnderman",
@@ -453,26 +476,28 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "ganymedes01.etfuturum.entities.EntityBee",
     "displayName": "etfuturum.bee",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.4,
-    "scaleFactor": 0.7,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -17.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "ganymedes01.etfuturum.entities.EntityArmourStand",
@@ -491,7 +516,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "ganymedes01.etfuturum.entities.EntityRespawnedDragon",
@@ -499,10 +525,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 2.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -17.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -510,7 +536,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "ganymedes01.etfuturum.entities.EntityEndermite",
@@ -521,7 +548,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -529,7 +556,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "ganymedes01.etfuturum.entities.EntityFox",
@@ -540,7 +568,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -8.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -548,7 +576,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "ganymedes01.etfuturum.entities.EntityHusk",
@@ -556,7 +585,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -567,7 +596,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "ganymedes01.etfuturum.entities.EntityShulker",
@@ -575,10 +605,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -14.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -586,7 +616,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER_GOLEM",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "ganymedes01.etfuturum.entities.EntityZombieVillager",
@@ -594,7 +625,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -605,7 +636,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "ganymedes01.etfuturum.entities.EntityStray",
@@ -613,7 +645,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -624,7 +656,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntityAnt",
@@ -635,7 +668,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -643,7 +676,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityBear",
@@ -651,83 +685,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.3,
-    "sizeModifier": 0.0,
-    "xOffset": 0.0,
-    "yOffset": -5.0,
-    "babyXOffset": 0.0,
-    "babyYOffset": 0.0,
-    "yawOffset": 0.0,
-    "pitchOffset": 0.0,
-    "rollOffset": 0.0,
-    "type": "ANIMAL",
-    "popoffEnabled": true,
-    "enable": true
-  },
-  {
-    "className": "drzhark.mocreatures.entity.ambient.MoCEntityBee",
-    "displayName": "MoCreatures.Bee",
-    "appendBabyName": false,
-    "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
-    "sizeModifier": 0.0,
-    "xOffset": 0.0,
-    "yOffset": -16.0,
-    "babyXOffset": 0.0,
-    "babyYOffset": -16.0,
-    "yawOffset": 0.0,
-    "pitchOffset": 0.0,
-    "rollOffset": 0.0,
-    "type": "ARTHROPOD",
-    "popoffEnabled": true,
-    "enable": true
-  },
-  {
-    "className": "drzhark.mocreatures.entity.animal.MoCEntityBigCat",
-    "displayName": "MoCreatures.BigCat",
-    "appendBabyName": false,
-    "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.0,
-    "scaleFactor": 0.0,
-    "sizeModifier": 0.0,
-    "xOffset": 0.0,
-    "yOffset": -4.0,
-    "babyXOffset": 0.0,
-    "babyYOffset": 0.0,
-    "yawOffset": 0.0,
-    "pitchOffset": 0.0,
-    "rollOffset": 0.0,
-    "type": "ANIMAL",
-    "popoffEnabled": true,
-    "enable": true
-  },
-  {
-    "className": "drzhark.mocreatures.entity.monster.MoCEntityBigGolem",
-    "displayName": "MoCreatures.BigGolem",
-    "appendBabyName": false,
-    "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.0,
-    "scaleFactor": 1.6,
-    "sizeModifier": 0.0,
-    "xOffset": 0.0,
-    "yOffset": -6.0,
-    "babyXOffset": 0.0,
-    "babyYOffset": 0.0,
-    "yawOffset": 0.0,
-    "pitchOffset": 0.0,
-    "rollOffset": 0.0,
-    "type": "MONSTER_GOLEM",
-    "popoffEnabled": true,
-    "enable": true
-  },
-  {
-    "className": "drzhark.mocreatures.entity.animal.MoCEntityBird",
-    "displayName": "MoCreatures.Bird",
-    "appendBabyName": false,
-    "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.5,
-    "scaleFactor": 0.6,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -738,7 +696,88 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
+  },
+  {
+    "className": "drzhark.mocreatures.entity.ambient.MoCEntityBee",
+    "displayName": "MoCreatures.Bee",
+    "appendBabyName": false,
+    "babyScaleModifier": 0.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
+    "sizeModifier": 0.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
+    "babyXOffset": 0.0,
+    "babyYOffset": 0.0,
+    "yawOffset": 0.0,
+    "pitchOffset": 0.0,
+    "rollOffset": 0.0,
+    "type": "ARTHROPOD",
+    "popoffEnabled": true,
+    "enable": true,
+    "layout": 1
+  },
+  {
+    "className": "drzhark.mocreatures.entity.animal.MoCEntityBigCat",
+    "displayName": "MoCreatures.BigCat",
+    "appendBabyName": false,
+    "babyScaleModifier": 0.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
+    "sizeModifier": 0.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
+    "babyXOffset": 0.0,
+    "babyYOffset": 0.0,
+    "yawOffset": 0.0,
+    "pitchOffset": 0.0,
+    "rollOffset": 0.0,
+    "type": "ANIMAL",
+    "popoffEnabled": true,
+    "enable": true,
+    "layout": 1
+  },
+  {
+    "className": "drzhark.mocreatures.entity.monster.MoCEntityBigGolem",
+    "displayName": "MoCreatures.BigGolem",
+    "appendBabyName": false,
+    "babyScaleModifier": 0.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
+    "sizeModifier": 0.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
+    "babyXOffset": 0.0,
+    "babyYOffset": 0.0,
+    "yawOffset": 0.0,
+    "pitchOffset": 0.0,
+    "rollOffset": 0.0,
+    "type": "MONSTER_GOLEM",
+    "popoffEnabled": true,
+    "enable": true,
+    "layout": 1
+  },
+  {
+    "className": "drzhark.mocreatures.entity.animal.MoCEntityBird",
+    "displayName": "MoCreatures.Bird",
+    "appendBabyName": false,
+    "babyScaleModifier": 0.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
+    "sizeModifier": 0.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
+    "babyXOffset": 0.0,
+    "babyYOffset": 0.0,
+    "yawOffset": 0.0,
+    "pitchOffset": 0.0,
+    "rollOffset": 0.0,
+    "type": "ANIMAL",
+    "popoffEnabled": true,
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityBoar",
@@ -749,7 +788,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -757,7 +796,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityBunny",
@@ -765,10 +805,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -776,26 +816,28 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntityButterfly",
     "displayName": "MoCreatures.Butterfly",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.5,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -23.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -24.0,
+    "babyYOffset": 0.0,
     "yawOffset": 120.0,
     "pitchOffset": 999.0,
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntityCrab",
@@ -803,56 +845,59 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -15.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntityCricket",
     "displayName": "MoCreatures.Cricket",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.6,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -15.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityCrocodile",
     "displayName": "MoCreatures.Crocodile",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 1.7,
-    "scaleFactor": 2.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -15.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityDeer",
@@ -871,56 +916,59 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.aquatic.MoCEntityDolphin",
     "displayName": "MoCreatures.Dolphin",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 2.0,
-    "scaleFactor": 1.3,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -19.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -19.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntityDragonfly",
     "displayName": "MoCreatures.Dragonfly",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.5,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -16.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityDuck",
     "displayName": "MoCreatures.Duck",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.5,
-    "scaleFactor": 0.5,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -928,7 +976,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.item.MoCEntityEgg",
@@ -938,8 +987,8 @@
     "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": -8.0,
-    "yOffset": -13.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -947,26 +996,28 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntityFirefly",
     "displayName": "MoCreatures.Firefly",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.5,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -16.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.item.MoCEntityFishBowl",
@@ -985,37 +1036,39 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntityFly",
     "displayName": "MoCreatures.Fly",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.5,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -16.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityFox",
     "displayName": "MoCreatures.Fox",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.3,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1023,7 +1076,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityGoat",
@@ -1031,10 +1085,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.4,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -6.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1042,26 +1096,28 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.monster.MoCEntityHellRat",
     "displayName": "MoCreatures.HellRat",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.3,
-    "scaleFactor": 0.6,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -9.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -4.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityHorse",
@@ -1069,7 +1125,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.05,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -1080,26 +1136,28 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.monster.MoCEntityHorseMob",
     "displayName": "MoCreatures.HorseMob",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.6,
-    "scaleFactor": 1.05,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -3.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "UNDEAD_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityKitty",
@@ -1110,7 +1168,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1118,7 +1176,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.item.MoCEntityKittyBed",
@@ -1137,26 +1196,28 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityKomodoDragon",
     "displayName": "MoCreatures.KomodoDragon",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 1.7,
-    "scaleFactor": 1.6,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -5.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityElephant",
@@ -1167,7 +1228,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1175,7 +1236,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.item.MoCEntityLitterBox",
@@ -1194,7 +1256,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntityMaggot",
@@ -1205,7 +1268,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1213,37 +1276,39 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.monster.MoCEntityMiniGolem",
     "displayName": "MoCreatures.MiniGolem",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.5,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -5.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "MONSTER_GOLEM",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityMole",
     "displayName": "MoCreatures.Mole",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.3,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1251,7 +1316,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityMouse",
@@ -1262,7 +1328,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1270,34 +1336,36 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.monster.MoCEntityOgre",
     "displayName": "MoCreatures.Ogre",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.7,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -5.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityOstrich",
     "displayName": "MoCreatures.Ostrich",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.3,
-    "scaleFactor": 0.7,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -1308,7 +1376,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityPetScorpion",
@@ -1319,7 +1388,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1327,26 +1396,28 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.aquatic.MoCEntityPiranha",
     "displayName": "MoCreatures.Piranha",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 1.3,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 4.0,
-    "yOffset": -25.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -25.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 90.0,
     "rollOffset": 90.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityRaccoon",
@@ -1357,7 +1428,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1365,83 +1436,88 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.monster.MoCEntityRat",
     "displayName": "MoCreatures.Rat",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.5,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -3.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.aquatic.MoCEntityRay",
     "displayName": "MoCreatures.Ray",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 3.0,
-    "scaleFactor": 1.2,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -20.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -20.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": -15.0,
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntityRoach",
     "displayName": "MoCreatures.Roach",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.5,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -16.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.aquatic.MoCEntityShark",
     "displayName": "MoCreatures.Shark",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 2.5,
-    "scaleFactor": 1.6,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 3.0,
-    "yOffset": -18.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -16.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.ambient.MoCEntitySnail",
@@ -1452,7 +1528,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1460,18 +1536,19 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityTurkey",
     "displayName": "MoCreatures.Turkey",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.3,
-    "scaleFactor": 0.7,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1479,7 +1556,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityTurtle",
@@ -1490,34 +1568,36 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -14.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -14.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntityWyvern",
     "displayName": "MoCreatures.Wyvern",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.6,
-    "scaleFactor": 0.6,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -16.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.monster.MoCEntityScorpion",
@@ -1528,7 +1608,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1536,7 +1616,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.monster.MoCEntitySilverSkeleton",
@@ -1544,7 +1625,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -1555,7 +1636,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.animal.MoCEntitySnake",
@@ -1565,8 +1647,8 @@
     "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": -5.0,
-    "yOffset": -20.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1574,7 +1656,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.monster.MoCEntityWerewolf",
@@ -1582,7 +1665,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -1593,7 +1676,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.aquatic.MoCEntityMediumFish",
@@ -1603,16 +1687,17 @@
     "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 6.0,
-    "yOffset": -20.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -20.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 40.0,
     "rollOffset": 90.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.aquatic.MoCEntityJellyFish",
@@ -1621,9 +1706,9 @@
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
-    "sizeModifier": -0.05,
+    "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1631,7 +1716,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.aquatic.MoCEntitySmallFish",
@@ -1641,35 +1727,37 @@
     "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 5.0,
-    "yOffset": -25.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -23.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 90.0,
     "rollOffset": 90.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "drzhark.mocreatures.entity.aquatic.MoCEntityFishy",
     "displayName": "MoCreatures.Fishy",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.6,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -20.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": -19.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 90.0,
     "rollOffset": 90.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "chylex.hee.entity.boss.EntityBossDragon",
@@ -1677,10 +1765,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1688,7 +1776,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "org.fentanylsolutions.eyesintheshadows.entity.entities.EntityEyes",
@@ -1699,7 +1788,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1707,7 +1796,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": false,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntityAnglerFish",
@@ -1718,7 +1808,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -17.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1726,7 +1816,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntityCannibal",
@@ -1745,18 +1836,19 @@
     "rollOffset": 0.0,
     "type": "VILLAGER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntityCrab",
     "displayName": "OCCrab",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 1.3,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": -2.0,
-    "yOffset": -16.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1764,7 +1856,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntityFishy",
@@ -1775,7 +1868,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1783,7 +1876,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntityKingCrab",
@@ -1791,10 +1885,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -12.75,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1802,7 +1896,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntityOrca",
@@ -1810,10 +1905,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -23.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1821,7 +1916,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntityRog",
@@ -1829,10 +1925,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.3,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -20.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1840,7 +1936,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntitySeagull",
@@ -1848,10 +1945,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1859,7 +1956,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntitySeaTurtle",
@@ -1867,10 +1965,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1878,7 +1976,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntityShark",
@@ -1886,10 +1985,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1897,7 +1996,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.Oceancraft.common.EntityWhale",
@@ -1905,10 +2005,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -20.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1916,18 +2016,19 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.armadillo.EntityArmadillo",
     "displayName": "wildmobsmod.Armadillo",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 1.2,
+    "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1935,7 +2036,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.bison.EntityBison",
@@ -1946,7 +2048,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1954,7 +2056,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.butterfly.EntityButterfly",
@@ -1965,7 +2068,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1973,7 +2076,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.cheetah.EntityCheetah",
@@ -1984,7 +2088,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -1992,7 +2096,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.cougar.EntityCougar",
@@ -2003,7 +2108,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2011,7 +2116,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.deer.EntityDeer",
@@ -2019,10 +2125,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2030,7 +2136,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.direwolf.EntityDireWolf",
@@ -2041,7 +2148,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2049,7 +2156,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.dragonfly.EntityDragonfly",
@@ -2060,7 +2168,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -20.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2068,7 +2176,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.monster.faded.EntityFaded",
@@ -2076,10 +2185,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.1,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2087,7 +2196,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.fox.EntityFox",
@@ -2098,7 +2208,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2106,7 +2216,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.goat.EntityGoat",
@@ -2117,7 +2228,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2125,7 +2236,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.goose.EntityGoose",
@@ -2133,7 +2245,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -2144,7 +2256,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.hyena.EntityHyena",
@@ -2155,7 +2268,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2163,7 +2276,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.jellyfish.EntityJellyfish",
@@ -2171,10 +2285,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -30.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2182,7 +2296,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.monster.magmaplant.EntityMagmaPlant",
@@ -2193,7 +2308,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -13.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2201,7 +2316,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.mouse.EntityMouse",
@@ -2212,7 +2328,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2220,7 +2336,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.monster.seascorpion.EntitySeaScorpion",
@@ -2231,7 +2348,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2239,7 +2356,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.monster.skeletonwolf.EntitySkeletonWolf",
@@ -2250,7 +2368,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2258,7 +2376,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.monster.tarantula.EntityTarantula",
@@ -2269,7 +2388,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2277,7 +2396,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.ocelot.EntityWMOcelot",
@@ -2288,7 +2408,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2296,7 +2416,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.passive.wolf.EntityWMWolf",
@@ -2307,7 +2428,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2315,7 +2436,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.monster.zomgus.EntityZomgus",
@@ -2323,7 +2445,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -2334,7 +2456,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.wildmobsmod.entity.monster.dreath.EntityDreath",
@@ -2342,7 +2465,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -2353,7 +2476,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.boss.EntityCultistPortal",
@@ -2364,7 +2488,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2372,7 +2496,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.EntityEldritchCrab",
@@ -2383,7 +2508,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2391,7 +2516,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.boss.EntityEldritchWarden",
@@ -2402,7 +2528,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -44.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2410,26 +2536,28 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.EntityGiantBrainyZombie",
     "displayName": "Thaumcraft.GiantBrainyZombie",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 1.2,
-    "scaleFactor": 2.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
-    "babyYOffset": 2.0,
+    "babyYOffset": 0.0,
     "yawOffset": 0.0,
     "pitchOffset": 0.0,
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.golems.EntityGolemBase",
@@ -2437,7 +2565,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -2448,7 +2576,8 @@
     "rollOffset": 0.0,
     "type": "GOLEM",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.EntityMindSpider",
@@ -2459,7 +2588,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2467,7 +2596,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.EntityTaintChicken",
@@ -2475,7 +2605,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -2486,7 +2616,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.EntityTaintVillager",
@@ -2494,7 +2625,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -2505,7 +2636,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.EntityTaintSpider",
@@ -2516,7 +2648,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2524,7 +2656,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.EntityTaintSwarm",
@@ -2532,10 +2665,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 2.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": -3.0,
-    "yOffset": 25.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2543,7 +2676,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.EntityThaumicSlime",
@@ -2554,7 +2688,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -13.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2562,7 +2696,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.golems.EntityTravelingTrunk",
@@ -2573,7 +2708,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -13.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2581,7 +2716,8 @@
     "rollOffset": 0.0,
     "type": "GOLEM",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.EntityWisp",
@@ -2592,7 +2728,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -14.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2600,7 +2736,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFFireBeetle",
@@ -2608,10 +2745,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2619,7 +2756,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.passive.EntityTFMobileFirefly",
@@ -2627,10 +2765,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -13.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2638,7 +2776,8 @@
     "rollOffset": 0.0,
     "type": "AMBIENT",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.passive.EntityTFBunny",
@@ -2646,10 +2785,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -6.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2657,7 +2796,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.passive.EntityTFRaven",
@@ -2676,7 +2816,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.passive.EntityTFSquirrel",
@@ -2684,7 +2825,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -2695,7 +2836,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFHedgeSpider",
@@ -2706,7 +2848,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2714,7 +2856,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFHelmetCrab",
@@ -2724,8 +2867,8 @@
     "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 3.0,
-    "yOffset": -15.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2733,7 +2876,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "thaumcraft.common.entities.monster.boss.EntityTaintacleGiant",
@@ -2744,7 +2888,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2752,7 +2896,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFMazeSlime",
@@ -2763,7 +2908,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -8.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2771,7 +2916,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFMiniGhast",
@@ -2782,7 +2928,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2790,7 +2936,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFMosquitoSwarm",
@@ -2801,7 +2948,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 13.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2809,7 +2956,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFPinchBeetle",
@@ -2817,10 +2965,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2828,7 +2976,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFTowerBroodling",
@@ -2839,7 +2988,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2847,7 +2996,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFRovingCube",
@@ -2858,7 +3008,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2866,7 +3016,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.boss.EntityTFHydraHead",
@@ -2885,7 +3036,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.boss.EntityTFIceCrystal",
@@ -2896,7 +3048,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2904,7 +3056,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFKingSpider",
@@ -2912,10 +3065,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -13.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2923,7 +3076,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFSwarmSpider",
@@ -2934,7 +3088,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2942,7 +3096,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.boss.EntityTFUrGhast",
@@ -2950,10 +3105,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": -4.0,
-    "yOffset": -10.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -2961,7 +3116,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFTowerGhast",
@@ -2969,7 +3125,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -2980,7 +3136,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFTowerGolem",
@@ -2999,7 +3156,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER_GOLEM",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFTowerTermite",
@@ -3007,7 +3165,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3018,7 +3176,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFGoblinKnightUpper",
@@ -3026,10 +3185,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3037,7 +3196,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.boss.EntityTFYetiAlpha",
@@ -3056,7 +3216,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityBabaYaga",
@@ -3064,10 +3225,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3075,7 +3236,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityCorpse",
@@ -3086,7 +3248,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3094,7 +3256,8 @@
     "rollOffset": 0.0,
     "type": "PLAYER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityCovenWitch",
@@ -3102,7 +3265,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.76,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3113,7 +3276,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityDarkMark",
@@ -3132,7 +3296,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityDeath",
@@ -3140,7 +3305,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3151,7 +3316,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.boss.EntityTFSnowQueen",
@@ -3159,10 +3325,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3170,7 +3336,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityEnt",
@@ -3178,7 +3345,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3189,7 +3356,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityGoblin",
@@ -3208,7 +3376,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityHornedHuntsman",
@@ -3216,7 +3385,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3227,7 +3396,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityImp",
@@ -3235,7 +3405,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3246,7 +3416,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityLeonard",
@@ -3254,7 +3425,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3265,7 +3436,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityLordOfTorment",
@@ -3273,7 +3445,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3284,7 +3456,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityLostSoul",
@@ -3295,7 +3468,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3303,7 +3476,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityParasyticLouse",
@@ -3314,7 +3488,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3322,7 +3496,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityMirrorFace",
@@ -3341,7 +3516,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityNightmare",
@@ -3349,10 +3525,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3360,7 +3536,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntitySpirit",
@@ -3371,7 +3548,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3379,7 +3556,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityVampire",
@@ -3387,7 +3565,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3398,7 +3576,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityVillageGuard",
@@ -3406,7 +3585,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3417,7 +3596,8 @@
     "rollOffset": 0.0,
     "type": "VILLAGER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityWingedMonkey",
@@ -3425,7 +3605,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3436,7 +3616,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityWitchHunter",
@@ -3444,7 +3625,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3455,7 +3636,8 @@
     "rollOffset": 0.0,
     "type": "VILLAGER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityEye",
@@ -3474,18 +3656,19 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFBlockGoblin",
-    "displayName": "TwilightForest.Block\u0026Chain Goblin",
+    "displayName": "TwilightForest.Block&Chain Goblin",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3493,7 +3676,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "twilightforest.entity.EntityTFSlimeBeetle",
@@ -3501,10 +3685,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3512,7 +3696,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityIllusionZombie",
@@ -3531,7 +3716,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": false,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityIllusionSpider",
@@ -3550,7 +3736,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": false,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "com.emoniph.witchery.entity.EntityIllusionCreeper",
@@ -3569,7 +3756,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": false,
-    "enable": false
+    "enable": false,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.arcticmobs.entity.EntityArix",
@@ -3577,7 +3765,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3588,7 +3776,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.arcticmobs.entity.EntityFrostweaver",
@@ -3596,7 +3785,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3607,7 +3796,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.arcticmobs.entity.EntityReiver",
@@ -3615,7 +3805,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3626,7 +3816,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.arcticmobs.entity.EntitySerpix",
@@ -3634,10 +3825,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.45,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 4.0,
-    "yOffset": -20.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3645,7 +3836,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.arcticmobs.entity.EntityWendigo",
@@ -3653,9 +3845,9 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 2.0,
+    "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
@@ -3664,7 +3856,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.arcticmobs.entity.EntityYeti",
@@ -3672,9 +3865,9 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 3.0,
+    "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
@@ -3683,7 +3876,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "aquacreeper.entities.EntityAquaCreeper",
@@ -3702,7 +3896,8 @@
     "rollOffset": 0.0,
     "type": "WATER_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityAirSled",
@@ -3713,7 +3908,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3721,7 +3916,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityBattleChicken",
@@ -3740,7 +3936,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityBroom",
@@ -3748,7 +3945,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3759,7 +3956,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityEarthElemental",
@@ -3767,7 +3965,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3778,7 +3976,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityFlicker",
@@ -3786,7 +3985,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 2.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3797,7 +3996,8 @@
     "rollOffset": 0.0,
     "type": "AMBIENT",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntitySpecificHallucinations$EntityHallucinationWitherSkeleton",
@@ -3805,7 +4005,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3816,7 +4016,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntitySpecificHallucinations$EntityHallucinationSpider",
@@ -3824,7 +4025,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3835,7 +4036,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityMageVillager",
@@ -3843,7 +4045,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3854,7 +4056,8 @@
     "rollOffset": 0.0,
     "type": "VILLAGER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityManaCreeper",
@@ -3862,7 +4065,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -3873,7 +4076,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityWinterGuardianArm",
@@ -3884,7 +4088,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3892,7 +4096,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityThrownRock",
@@ -3903,7 +4108,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3911,7 +4116,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityThrownSickle",
@@ -3919,10 +4125,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.75,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3930,7 +4136,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.entities.EntityWhirlwind",
@@ -3941,7 +4148,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3949,7 +4156,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityAirGuardian",
@@ -3960,7 +4168,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3968,7 +4176,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityArcaneGuardian",
@@ -3976,10 +4185,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -3987,7 +4196,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityEarthGuardian",
@@ -3995,10 +4205,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4006,7 +4216,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityEnderGuardian",
@@ -4014,10 +4225,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4025,7 +4236,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityFireGuardian",
@@ -4033,10 +4245,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 3.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4044,7 +4256,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityLifeGuardian",
@@ -4052,10 +4265,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.3,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 30.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4063,7 +4276,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityLightningGuardian",
@@ -4074,7 +4288,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 25.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4082,7 +4296,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityNatureGuardian",
@@ -4090,10 +4305,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.45,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4101,7 +4316,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityWaterGuardian",
@@ -4120,7 +4336,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "am2.bosses.EntityWinterGuardian",
@@ -4128,7 +4345,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4139,7 +4356,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "atomicstryker.minions.common.entity.EntityMinion",
@@ -4147,7 +4365,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4158,7 +4376,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "tuhljin.automagy.entities.EntityWispNether",
@@ -4166,7 +4385,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4177,7 +4396,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "vazkii.botania.common.entity.EntityPinkWither",
@@ -4185,10 +4405,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.2,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 8.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4196,7 +4416,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "vazkii.botania.common.entity.EntityPixie",
@@ -4204,7 +4425,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 2.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4215,7 +4436,8 @@
     "rollOffset": 0.0,
     "type": "AMBIENT",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "georgetsak.camouflagecreepers.EntityCCreeper",
@@ -4234,7 +4456,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.demonmobs.entity.EntityAstaroth",
@@ -4245,7 +4468,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -15.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4253,7 +4476,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.demonmobs.entity.EntityBehemoth",
@@ -4272,7 +4496,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.demonmobs.entity.EntityBelph",
@@ -4291,7 +4516,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.demonmobs.entity.EntityNetherSoul",
@@ -4299,7 +4525,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4310,7 +4536,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.demonmobs.entity.EntityPinky",
@@ -4329,7 +4556,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.desertmobs.entity.EntityErepede",
@@ -4337,7 +4565,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4348,7 +4576,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.desertmobs.entity.EntityGorgomite",
@@ -4356,7 +4585,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.2,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4367,7 +4596,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.desertmobs.entity.EntityJoustAlpha",
@@ -4375,7 +4605,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4386,7 +4616,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.desertmobs.entity.EntityManticore",
@@ -4394,7 +4625,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.65,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4405,7 +4636,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "diversity.entity.EntityDarkSpider",
@@ -4416,7 +4648,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4424,7 +4656,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "diversity.entity.EntityDwarf",
@@ -4432,7 +4665,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4443,7 +4676,8 @@
     "rollOffset": 0.0,
     "type": "VILLAGER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "diversity.entity.EntityYeti",
@@ -4451,7 +4685,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4462,7 +4696,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "info.ata4.minecraft.dragon.server.entity.EntityTameableDragon",
@@ -4470,7 +4705,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4481,7 +4716,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "mysticalmobs.common.entity.EntityEnderEye",
@@ -4489,10 +4725,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4500,7 +4736,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "mysticalmobs.common.entity.EntityFish",
@@ -4511,7 +4748,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -13.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4519,7 +4756,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "mysticalmobs.common.entity.EntityEye",
@@ -4527,7 +4765,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4538,7 +4776,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.forestmobs.entity.EntityArisaur",
@@ -4546,7 +4785,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4557,7 +4796,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.forestmobs.entity.EntityEnt",
@@ -4565,7 +4805,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4576,7 +4816,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.forestmobs.entity.EntityTrent",
@@ -4584,7 +4825,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4595,7 +4836,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.forestmobs.entity.EntityWarg",
@@ -4603,10 +4845,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.5,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4614,7 +4856,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.freshwatermobs.entity.EntityJengu",
@@ -4622,10 +4865,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 5.0,
-    "yOffset": -3.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4633,7 +4876,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.freshwatermobs.entity.EntitySilex",
@@ -4641,10 +4885,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4652,7 +4896,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.freshwatermobs.entity.EntityStrider",
@@ -4663,7 +4908,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4671,7 +4916,8 @@
     "rollOffset": 0.0,
     "type": "WATER_ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.freshwatermobs.entity.EntityZephyr",
@@ -4679,10 +4925,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4690,7 +4936,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.infernomobs.entity.EntityAfrit",
@@ -4698,7 +4945,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4709,7 +4956,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.infernomobs.entity.EntityCephignis",
@@ -4717,10 +4965,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 3.0,
-    "yOffset": -13.5,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4728,7 +4976,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.infernomobs.entity.EntityCinder",
@@ -4736,7 +4985,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4747,7 +4996,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.infernomobs.entity.EntityKhalk",
@@ -4757,7 +5007,7 @@
     "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 0.5,
+    "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
@@ -4766,7 +5016,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.infernomobs.entity.EntityLobber",
@@ -4774,7 +5025,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4785,7 +5036,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.junglemobs.entity.EntityConcapedeHead",
@@ -4793,10 +5045,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.4,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.75,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4804,7 +5056,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.junglemobs.entity.EntityConcapedeSegment",
@@ -4812,10 +5065,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.4,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -10.5,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4823,7 +5076,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.junglemobs.entity.EntityGeken",
@@ -4831,9 +5085,9 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 0.5,
+    "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
@@ -4842,7 +5096,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.junglemobs.entity.EntityUvaraptor",
@@ -4850,10 +5105,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.55,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -5.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4861,7 +5116,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.junglemobs.entity.EntityTarantula",
@@ -4869,10 +5125,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -16.25,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4880,7 +5136,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.junglemobs.entity.EntityVespid",
@@ -4888,7 +5145,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.4,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4899,7 +5156,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.junglemobs.entity.EntityVespidQueen",
@@ -4907,7 +5165,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.4,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -4918,7 +5176,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.github.elenterius.magianaturalis.entity.taint.EntityTaintBreeder",
@@ -4937,7 +5196,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.mountainmobs.entity.EntityJabberwock",
@@ -4945,10 +5205,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 10.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -4956,7 +5216,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.mountainmobs.entity.EntityYale",
@@ -4964,25 +5225,6 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
-    "sizeModifier": 0.0,
-    "xOffset": 0.0,
-    "yOffset": -9.5,
-    "babyXOffset": 0.0,
-    "babyYOffset": 0.0,
-    "yawOffset": 0.0,
-    "pitchOffset": 0.0,
-    "rollOffset": 0.0,
-    "type": "UNKNOWN",
-    "popoffEnabled": true,
-    "enable": true
-  },
-  {
-    "className": "openblocks.common.entity.EntityMiniMe",
-    "displayName": "OpenBlocks.MiniMe",
-    "appendBabyName": false,
-    "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.7,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
@@ -4994,7 +5236,28 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
+  },
+  {
+    "className": "openblocks.common.entity.EntityMiniMe",
+    "displayName": "OpenBlocks.MiniMe",
+    "appendBabyName": false,
+    "babyScaleModifier": 0.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
+    "sizeModifier": 0.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
+    "babyXOffset": 0.0,
+    "babyYOffset": 0.0,
+    "yawOffset": 0.0,
+    "pitchOffset": 0.0,
+    "rollOffset": 0.0,
+    "type": "UNKNOWN",
+    "popoffEnabled": true,
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.plainsmobs.entity.EntityRoc",
@@ -5002,10 +5265,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.35,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -11.25,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5013,7 +5276,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.plainsmobs.entity.EntityVentoraptor",
@@ -5021,10 +5285,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -4.5,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5032,7 +5296,8 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.plainsmobs.entity.EntityZoataur",
@@ -5040,9 +5305,9 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.75,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 4.0,
+    "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
@@ -5051,7 +5316,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.saltwatermobs.entity.EntityIka",
@@ -5059,10 +5325,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.65,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -11.75,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5070,34 +5336,16 @@
     "rollOffset": 0.0,
     "type": "UNKNOWN",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.saltwatermobs.entity.EntityAbtu",
     "displayName": "saltwatermobs.abtu",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.75,
-    "scaleFactor": 0.0,
-    "sizeModifier": 0.0,
-    "xOffset": 0.0,
-    "yOffset": -11.75,
-    "babyXOffset": -0.25,
-    "babyYOffset": -17.5,
-    "yawOffset": 0.0,
-    "pitchOffset": 0.0,
-    "rollOffset": 0.0,
-    "type": "MONSTER",
-    "popoffEnabled": true,
-    "enable": true
-  },
-  {
-    "className": "lycanite.lycanitesmobs.saltwatermobs.entity.EntityLacedon",
-    "displayName": "saltwatermobs.lacedon",
-    "appendBabyName": false,
-    "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.75,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5108,18 +5356,19 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
-    "className": "lycanite.lycanitesmobs.saltwatermobs.entity.EntityRaiko",
-    "displayName": "saltwatermobs.raiko",
+    "className": "lycanite.lycanitesmobs.saltwatermobs.entity.EntityLacedon",
+    "displayName": "saltwatermobs.lacedon",
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.25,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -12.75,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5127,7 +5376,28 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
+  },
+  {
+    "className": "lycanite.lycanitesmobs.saltwatermobs.entity.EntityRaiko",
+    "displayName": "saltwatermobs.raiko",
+    "appendBabyName": false,
+    "babyScaleModifier": 0.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
+    "sizeModifier": 0.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
+    "babyXOffset": 0.0,
+    "babyYOffset": 0.0,
+    "yawOffset": 0.0,
+    "pitchOffset": 0.0,
+    "rollOffset": 0.0,
+    "type": "MONSTER",
+    "popoffEnabled": true,
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.saltwatermobs.entity.EntitySkylus",
@@ -5137,7 +5407,7 @@
     "babyScaleFactor": 0.0,
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 6.5,
+    "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
@@ -5146,7 +5416,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.shadowmobs.entity.EntityEpion",
@@ -5154,26 +5425,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.3,
-    "sizeModifier": 0.0,
-    "xOffset": 0.0,
-    "yOffset": -15.0,
-    "babyXOffset": 0.0,
-    "babyYOffset": 0.0,
-    "yawOffset": 0.0,
-    "pitchOffset": 0.0,
-    "rollOffset": 0.0,
-    "type": "UNDEAD",
-    "popoffEnabled": true,
-    "enable": true
-  },
-  {
-    "className": "lycanite.lycanitesmobs.shadowmobs.entity.EntityGeist",
-    "displayName": "shadowmobs.geist",
-    "appendBabyName": false,
-    "babyScaleModifier": 0.0,
-    "babyScaleFactor": 0.0,
-    "scaleFactor": 1.1,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5184,7 +5436,28 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
+  },
+  {
+    "className": "lycanite.lycanitesmobs.shadowmobs.entity.EntityGeist",
+    "displayName": "shadowmobs.geist",
+    "appendBabyName": false,
+    "babyScaleModifier": 0.0,
+    "babyScaleFactor": 0.0,
+    "scaleFactor": 0.0,
+    "sizeModifier": 0.0,
+    "xOffset": 0.0,
+    "yOffset": 0.0,
+    "babyXOffset": 0.0,
+    "babyYOffset": 0.0,
+    "yawOffset": 0.0,
+    "pitchOffset": 0.0,
+    "rollOffset": 0.0,
+    "type": "UNDEAD",
+    "popoffEnabled": true,
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.shadowmobs.entity.EntityGrue",
@@ -5192,9 +5465,9 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.65,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
-    "xOffset": 4.0,
+    "xOffset": 0.0,
     "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
@@ -5203,7 +5476,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.shadowmobs.entity.EntityPhantom",
@@ -5211,7 +5485,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.75,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5222,7 +5496,8 @@
     "rollOffset": 0.0,
     "type": "UNDEAD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.swampmobs.entity.EntityEyewig",
@@ -5230,7 +5505,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5241,7 +5516,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "lycanite.lycanitesmobs.swampmobs.entity.EntityRemobra",
@@ -5249,7 +5525,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5260,7 +5536,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "tconstruct.world.entity.KingBlueSlime",
@@ -5268,7 +5545,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.4,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5279,7 +5556,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.ilya3point999k.thaumicconcilium.common.entities.mobs.BrightestOne",
@@ -5287,10 +5565,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 5.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 60.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5298,7 +5576,8 @@
     "rollOffset": 0.0,
     "type": "BOSS",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "flaxbeard.thaumicexploration.entity.EntityTaintacleMinion",
@@ -5309,7 +5588,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -45.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5317,7 +5596,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.ilya3point999k.thaumicconcilium.common.entities.DopeSquid",
@@ -5325,10 +5605,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.8,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -30.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5336,7 +5616,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.kentington.thaumichorizons.common.entities.EntityGoldChicken",
@@ -5344,7 +5625,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5355,7 +5636,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.kentington.thaumichorizons.common.entities.EntityScholarChicken",
@@ -5363,7 +5645,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.6,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5374,7 +5656,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.kentington.thaumichorizons.common.entities.EntitySelfShearingSheep",
@@ -5382,7 +5665,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5393,7 +5676,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "com.kentington.thaumichorizons.common.entities.EntityTaintPig",
@@ -5412,7 +5696,8 @@
     "rollOffset": 0.0,
     "type": "ANIMAL",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "zeldaswordskills.entity.mobs.EntityWizzrobeGale",
@@ -5420,7 +5705,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5431,7 +5716,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "zeldaswordskills.entity.mobs.EntityWizzrobeIce",
@@ -5439,7 +5725,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5450,7 +5736,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "zeldaswordskills.entity.mobs.EntityWizzrobeFire",
@@ -5458,7 +5745,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5469,7 +5756,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "zeldaswordskills.entity.mobs.EntityWizzrobeThunder",
@@ -5477,7 +5765,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 0.7,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5488,7 +5776,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "chylex.hee.entity.mob.EntityMobEnderman",
@@ -5499,7 +5788,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -2.0,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5507,7 +5796,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "chylex.hee.entity.mob.EntityMobFireGolem",
@@ -5526,7 +5816,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER_GOLEM",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "chylex.hee.entity.mob.EntityMobHauntedMiner",
@@ -5534,10 +5825,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.3,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -7.5,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5545,7 +5836,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "chylex.hee.entity.mob.EntityMobHomelandEnderman",
@@ -5564,7 +5856,8 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "chylex.hee.entity.mob.EntityMobInfestedBat",
@@ -5575,7 +5868,7 @@
     "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": 17.5,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5583,7 +5876,8 @@
     "rollOffset": 0.0,
     "type": "AMBIENT",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "chylex.hee.entity.mob.EntityMobLouse",
@@ -5591,10 +5885,10 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.5,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
-    "yOffset": -18.5,
+    "yOffset": 0.0,
     "babyXOffset": 0.0,
     "babyYOffset": 0.0,
     "yawOffset": 0.0,
@@ -5602,7 +5896,8 @@
     "rollOffset": 0.0,
     "type": "ARTHROPOD_MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   },
   {
     "className": "chylex.hee.entity.mob.EntityMobScorchingLens",
@@ -5610,7 +5905,7 @@
     "appendBabyName": false,
     "babyScaleModifier": 0.0,
     "babyScaleFactor": 0.0,
-    "scaleFactor": 1.0,
+    "scaleFactor": 0.0,
     "sizeModifier": 0.0,
     "xOffset": 0.0,
     "yOffset": 0.0,
@@ -5621,6 +5916,7 @@
     "rollOffset": 0.0,
     "type": "MONSTER",
     "popoffEnabled": true,
-    "enable": true
+    "enable": true,
+    "layout": 1
   }
 ]
