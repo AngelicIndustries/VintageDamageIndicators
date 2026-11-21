@@ -5937,7 +5937,8 @@
     "type": "BOSS",
     "popoffEnabled": true,
     "enable": false,
-    "layout": 1
+    "layout": 1,
+    "since": 1
   },
   {
     "className": "openblocks.common.entity.EntityLuggage",
@@ -5957,7 +5958,8 @@
     "type": "UNKNOWN",
     "popoffEnabled": true,
     "enable": false,
-    "layout": 1
+    "layout": 1,
+    "since": 1
   },
   {
     "className": "org.fentanylsolutions.uraltezauber.common.entity.EntityDecoy",
@@ -5977,7 +5979,8 @@
     "type": "UNKNOWN",
     "popoffEnabled": true,
     "enable": false,
-    "layout": 1
+    "layout": 1,
+    "since": 1
   },
   {
     "className": "com.gildedgames.the_aether.entities.hostile.EntityMimic",
@@ -5997,7 +6000,8 @@
     "type": "MONSTER",
     "popoffEnabled": true,
     "enable": false,
-    "layout": 1
+    "layout": 1,
+    "since": 1
   },
   {
     "className": "com.stek101.projectzulu.common.mobs.entity.EntityMimic",
@@ -6017,7 +6021,8 @@
     "type": "MONSTER",
     "popoffEnabled": true,
     "enable": false,
-    "layout": 1
+    "layout": 1,
+    "since": 1
   },
   {
     "className": "org.fentanylsolutions.mobrewind.common.entity.EntityMimicube",
@@ -6037,7 +6042,8 @@
     "type": "MONSTER",
     "popoffEnabled": true,
     "enable": false,
-    "layout": 1
+    "layout": 1,
+    "since": 1
   },
   {
     "className": "thehippomaster.MutantCreatures.EndermanClone",
@@ -6057,6 +6063,7 @@
     "type": "MONSTER",
     "popoffEnabled": true,
     "enable": false,
-    "layout": 1
+    "layout": 1,
+    "since": 1
   }
 ]

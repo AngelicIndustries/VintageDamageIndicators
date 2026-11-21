@@ -205,6 +205,8 @@ public class VarInstanceCommon {
         public boolean enable;
         /** Which preview layout the sizes and offsets were made for; missing in older files, so 0 there. */
         public int layout;
+        /** The defaults revision that first shipped this entry (Config.addNewDefaults); missing on the others. */
+        public Integer since;
 
         public EntityOverride() {
             this.type = MobTypes.UNKNOWN;
@@ -255,6 +257,7 @@ public class VarInstanceCommon {
             copy.popoffEnabled = popoffEnabled;
             copy.enable = enable;
             copy.layout = layout;
+            copy.since = since;
             return copy;
         }
 

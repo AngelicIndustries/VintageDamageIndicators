@@ -13,9 +13,12 @@ import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -498,7 +501,8 @@ public class Config {
             return;
         }
         overridesFile = new File(parent, OVERRIDES_FILE_NAME);
-        if (!overridesFile.exists()) {
+        boolean fresh = !overridesFile.exists();
+        if (fresh) {
             copyDefaultOverridesFile(overridesFile);
         }
         entityOverrides = readEntityOverridesFile(overridesFile);
@@ -509,7 +513,66 @@ public class Config {
         if (upgraded) {
             VintageDamageIndicators.LOG
                 .info("Dropped entity override sizes and offsets made for the old preview layout; mobs are now fitted");
+        }
+        if (addNewDefaults(fresh) || upgraded) {
             saveEntityOverrides();
+        }
+    }
+
+    /**
+     * Gives an existing overrides file the default entries a newer VDI shipped: those with a later "since" than the
+     * revision the file was last given (defaultsRevision). Each is added once, so entries the player deleted stay
+     * deleted.
+     *
+     * @return whether any were added
+     */
+    private static boolean addNewDefaults(boolean fresh) {
+        List<VarInstanceCommon.EntityOverride> defaults = readDefaultOverrides();
+        int shipped = 0;
+        for (VarInstanceCommon.EntityOverride entry : defaults) {
+            if (entry.since != null) {
+                shipped = Math.max(shipped, entry.since);
+            }
+        }
+        Property given = config.get(
+            Categories.entityOverrides,
+            "defaultsRevision",
+            0,
+            "Which of VDI's default type overrides overrides.json was last given. Ones added by later versions are added once. Leave it as it is.");
+        int revision = fresh ? shipped : given.getInt();
+        int added = 0;
+        if (revision < shipped) {
+            Set<String> present = new HashSet<>();
+            for (VarInstanceCommon.EntityOverride override : entityOverrides) {
+                present.add(override.className);
+            }
+            for (VarInstanceCommon.EntityOverride entry : defaults) {
+                if (entry.since != null && entry.since > revision && present.add(entry.className)) {
+                    entityOverrides.add(entry);
+                    added++;
+                }
+            }
+            if (added > 0) {
+                VintageDamageIndicators.LOG.info("Added {} new default type overrides", added);
+            }
+        }
+        if (given.getInt() < shipped) {
+            given.set(shipped);
+            config.save();
+        }
+        return added > 0;
+    }
+
+    private static List<VarInstanceCommon.EntityOverride> readDefaultOverrides() {
+        try (InputStream in = Config.class.getResourceAsStream(OVERRIDES_RESOURCE_PATH)) {
+            if (in == null) {
+                return new ArrayList<>();
+            }
+            return readEntityOverrides(new InputStreamReader(in, StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            VintageDamageIndicators.LOG
+                .warn("Failed to read the default overrides from {}", OVERRIDES_RESOURCE_PATH, e);
+            return new ArrayList<>();
         }
     }
 
@@ -518,25 +581,29 @@ public class Config {
             return new ArrayList<>();
         }
         try (Reader reader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)) {
-            VarInstanceCommon.EntityOverride[] parsed = OVERRIDES_GSON
-                .fromJson(reader, VarInstanceCommon.EntityOverride[].class);
-            if (parsed == null) {
-                return new ArrayList<>();
-            }
-            ArrayList<VarInstanceCommon.EntityOverride> loaded = new ArrayList<>();
-            for (VarInstanceCommon.EntityOverride override : parsed) {
-                if (override == null || override.className == null
-                    || override.className.trim()
-                        .isEmpty()) {
-                    continue;
-                }
-                loaded.add(override);
-            }
-            return loaded;
+            return readEntityOverrides(reader);
         } catch (Exception e) {
             VintageDamageIndicators.LOG.warn("Failed to read entity overrides JSON from {}", file.getAbsolutePath(), e);
             return new ArrayList<>();
         }
+    }
+
+    private static List<VarInstanceCommon.EntityOverride> readEntityOverrides(Reader reader) {
+        VarInstanceCommon.EntityOverride[] parsed = OVERRIDES_GSON
+            .fromJson(reader, VarInstanceCommon.EntityOverride[].class);
+        ArrayList<VarInstanceCommon.EntityOverride> loaded = new ArrayList<>();
+        if (parsed == null) {
+            return loaded;
+        }
+        for (VarInstanceCommon.EntityOverride override : parsed) {
+            if (override == null || override.className == null
+                || override.className.trim()
+                    .isEmpty()) {
+                continue;
+            }
+            loaded.add(override);
+        }
+        return loaded;
     }
 
     private static void saveEntityOverrides() {
