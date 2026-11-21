@@ -1,11 +1,9 @@
 package industries.angelic.vintagedamageindicators.gui;
 
-import java.util.Arrays;
 import java.util.Locale;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
@@ -14,7 +12,6 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
 import industries.angelic.vintagedamageindicators.Config;
-import industries.angelic.vintagedamageindicators.client.HudOverlayLayout;
 import industries.angelic.vintagedamageindicators.client.HudSample;
 
 public class HudPositionScreen extends GuiScreen {
@@ -30,11 +27,6 @@ public class HudPositionScreen extends GuiScreen {
     private static final float MIN_SCALE = 0.1F;
     private static final float MAX_SCALE = 10.0F;
     private static final int OUTLINE_COLOR = 0xB0FFFFFF;
-    private static final String SAMPLE_BOSS_NAME = "Wither";
-    private static final float SAMPLE_BOSS_HEALTH = 0.68F;
-    private static final String[] SAMPLE_PLAYER_NAMES = { "Jack", "Alice", "BuilderBob", "Mossy", "SnowFox",
-        "EnderPear", "CopperCat", "BrickTop", "GlowInk", "Silverfish" };
-    private static final int[] SAMPLE_PLAYER_PINGS = { 42, 78, 123, 165, 245, 312, 480, 610, 920, -1 };
 
     private final GuiScreen parentScreen;
     private GuiTextField sizeField;
@@ -119,7 +111,6 @@ public class HudPositionScreen extends GuiScreen {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         drawDefaultBackground();
-        drawOverlayPreview();
         drawHudPreview();
         drawDragOutline();
         int bottomInfoRowY = getBottomInfoRowY();
@@ -192,82 +183,6 @@ public class HudPositionScreen extends GuiScreen {
         GL11.glScalef(this.previewScale, this.previewScale, 1.0F);
         HudSample.draw(minecraft, fontRenderer, this);
         GL11.glPopMatrix();
-    }
-
-    private void drawOverlayPreview() {
-        if (this.fontRendererObj == null) {
-            return;
-        }
-
-        HudOverlayLayout.OverlayRect hudRect = new HudOverlayLayout.OverlayRect(
-            this.hudX,
-            this.hudY,
-            getScaledHudWidth(),
-            getScaledHudHeight());
-        HudOverlayLayout.BossBarLayout bossBarLayout = HudOverlayLayout.resolveBossBarLayout(
-            this.width,
-            this.height,
-            hudRect,
-            !this.previewDisableBossBar,
-            this.fontRendererObj.getStringWidth(SAMPLE_BOSS_NAME));
-        HudOverlayLayout.PlayerListLayout playerListLayout = HudOverlayLayout.resolvePlayerListLayout(
-            this.width,
-            this.height,
-            hudRect,
-            bossBarLayout,
-            this.fontRendererObj,
-            Arrays.asList(SAMPLE_PLAYER_NAMES),
-            SAMPLE_PLAYER_NAMES.length,
-            SAMPLE_PLAYER_NAMES.length);
-
-        if (bossBarLayout.visible) {
-            drawBossBarPreview(bossBarLayout);
-        }
-        drawPlayerListPreview(playerListLayout);
-    }
-
-    private void drawBossBarPreview(HudOverlayLayout.BossBarLayout layout) {
-        Minecraft minecraft = Minecraft.getMinecraft();
-        minecraft.getTextureManager()
-            .bindTexture(Gui.icons);
-        int fillWidth = Math.round(SAMPLE_BOSS_HEALTH * (HudOverlayLayout.BOSS_BAR_WIDTH + 1));
-        GL11.glEnable(GL11.GL_BLEND);
-        drawTexturedModalRect(layout.left, layout.getBarY(), 0, 74, HudOverlayLayout.BOSS_BAR_WIDTH, 5);
-        drawTexturedModalRect(layout.left, layout.getBarY(), 0, 74, HudOverlayLayout.BOSS_BAR_WIDTH, 5);
-        if (fillWidth > 0) {
-            drawTexturedModalRect(layout.left, layout.getBarY(), 0, 79, fillWidth, 5);
-        }
-        this.fontRendererObj.drawStringWithShadow(
-            SAMPLE_BOSS_NAME,
-            layout.getNameX(this.fontRendererObj.getStringWidth(SAMPLE_BOSS_NAME)),
-            layout.getNameY(),
-            0xFFFFFF);
-        GL11.glDisable(GL11.GL_BLEND);
-    }
-
-    private void drawPlayerListPreview(HudOverlayLayout.PlayerListLayout layout) {
-        int panelWidth = layout.columnWidth * layout.columns;
-        drawRect(
-            layout.left - 1,
-            layout.top - 1,
-            layout.left + panelWidth,
-            layout.top + 9 * layout.rows,
-            Integer.MIN_VALUE);
-
-        for (int i = 0; i < layout.playerCount && i < SAMPLE_PLAYER_NAMES.length; i++) {
-            int xPos = layout.left + i % layout.columns * layout.columnWidth;
-            int yPos = layout.top + i / layout.columns * 9;
-            drawRect(xPos, yPos, xPos + layout.columnWidth - 1, yPos + 8, 553648127);
-            this.fontRendererObj.drawStringWithShadow(SAMPLE_PLAYER_NAMES[i], xPos, yPos, 0xFFFFFF);
-
-            Minecraft.getMinecraft()
-                .getTextureManager()
-                .bindTexture(Gui.icons);
-            int pingIndex = getPingIconIndex(SAMPLE_PLAYER_PINGS[i % SAMPLE_PLAYER_PINGS.length]);
-            this.zLevel += 100.0F;
-            drawTexturedModalRect(xPos + layout.columnWidth - 12, yPos, 0, 176 + pingIndex * 8, 10, 8);
-            this.zLevel -= 100.0F;
-        }
     }
 
     private int getHudWidth() {
@@ -387,25 +302,6 @@ public class HudPositionScreen extends GuiScreen {
 
     private int getBottomInfoRowY() {
         return this.height - BOTTOM_INFO_ROW_Y_OFFSET;
-    }
-
-    private int getPingIconIndex(int ping) {
-        if (ping < 0) {
-            return 5;
-        }
-        if (ping < 150) {
-            return 0;
-        }
-        if (ping < 300) {
-            return 1;
-        }
-        if (ping < 600) {
-            return 2;
-        }
-        if (ping < 1000) {
-            return 3;
-        }
-        return 4;
     }
 
     private float clampScale(float scale) {

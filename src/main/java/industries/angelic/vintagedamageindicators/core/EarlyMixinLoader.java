@@ -26,10 +26,6 @@ public class EarlyMixinLoader implements IEarlyMixinLoader, IFMLLoadingPlugin {
             .isClient()) {
             mixins.add("minecraft.MixinEntityPlayerSP");
             mixins.add("minecraft.MixinNetHandlerPlayClient");
-            mixins.add("minecraftforge.MixinGuiIngameForge");
-            if (loadedCoreMods.contains("serverutils.core.ServerUtilitiesCore")) {
-                mixins.add("serverutilities.MixinModernTabRenderer");
-            }
         } else {
 
         }
