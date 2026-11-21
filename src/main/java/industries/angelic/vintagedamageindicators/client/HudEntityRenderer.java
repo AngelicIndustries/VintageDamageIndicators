@@ -74,6 +74,12 @@ public final class HudEntityRenderer {
 
     public static void drawEntity(int x, int y, float scale, float yawInput, float pitchInput, float rollInput,
         EntityLivingBase entity) {
+        drawEntity(x, y, scale, yawInput, pitchInput, rollInput, entity, false);
+    }
+
+    /** As above; withParticles also draws the world's particles around the mob (TargetParticles). */
+    public static void drawEntity(int x, int y, float scale, float yawInput, float pitchInput, float rollInput,
+        EntityLivingBase entity, boolean withParticles) {
         if (entity == null) {
             return;
         }
@@ -255,6 +261,9 @@ public final class HudEntityRenderer {
                 RenderManager.instance.renderEntityWithPosYaw(entity, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F);
             }
             PreviewRenderPatches.renderPostEffects(entity, noWorld, oldPrevRenderYawOffset, oldRenderYawOffset);
+            if (withParticles) {
+                TargetParticles.draw(entity, PreviewRenderPatches.hudPartialTicks);
+            }
         } catch (Throwable e) {
             RENDER_FAILED_CLASSES.add(entity.getClass());
             VintageDamageIndicators.LOG.warn(

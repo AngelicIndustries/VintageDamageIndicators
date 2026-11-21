@@ -43,6 +43,7 @@ import industries.angelic.vintagedamageindicators.client.HudPreviewMath;
 import industries.angelic.vintagedamageindicators.client.HudPreviewParticles;
 import industries.angelic.vintagedamageindicators.client.PotionIconRenderer;
 import industries.angelic.vintagedamageindicators.client.PreviewRenderPatches;
+import industries.angelic.vintagedamageindicators.client.TargetParticles;
 import industries.angelic.vintagedamageindicators.network.ClientPotionEffectsCache;
 import industries.angelic.vintagedamageindicators.network.EntityPotionEffectsMessage;
 import industries.angelic.vintagedamageindicators.varinstances.VarInstanceCommon;
@@ -304,6 +305,11 @@ public class HudEventHandler extends Gui {
 
     private void renderHud(ScaledResolution resolution, EntityLivingBase target, MobTypes mobType) {
         Minecraft minecraft = Minecraft.getMinecraft();
+        boolean onlyParticles = HudPreviewMath.drawsNothing(target, getEntityOverride(target));
+        // No model and no particles: invisible on purpose, so the HUD doesn't give it away
+        if (onlyParticles && !TargetParticles.around(target)) {
+            return;
+        }
         PotionStripData potionStrip = getPotionStripData(target, minecraft.fontRenderer);
         boolean depthTestEnabled = GL11.glIsEnabled(GL11.GL_DEPTH_TEST);
         float scale = Config.hudIndicatorSize;
@@ -319,7 +325,7 @@ public class HudEventHandler extends Gui {
         GL11.glScalef(scale, scale, 1.0F);
 
         drawBackground(minecraft);
-        drawEntityPreview(target, mobType);
+        drawEntityPreview(target, mobType, onlyParticles);
         HudPreviewParticles.render(target, minecraft.fontRenderer, resolution.getScaleFactor());
         drawFrame(minecraft);
         drawMobTypeIcon(minecraft, mobType);
@@ -360,12 +366,19 @@ public class HudEventHandler extends Gui {
         GL11.glDisable(GL11.GL_BLEND);
     }
 
-    private void drawEntityPreview(EntityLivingBase target, MobTypes mobType) {
+    private void drawEntityPreview(EntityLivingBase target, MobTypes mobType, boolean withParticles) {
         VarInstanceCommon.EntityOverride override = getEntityOverride(target);
         HudPreviewMath.PreviewSettings preview = HudPreviewMath.resolvePreviewSettings(target, override);
         logPreviewSettings(target, mobType, override, preview);
-        HudEntityRenderer
-            .drawEntity(preview.x, preview.y, preview.scale, preview.yaw, preview.pitch, preview.roll, target);
+        HudEntityRenderer.drawEntity(
+            preview.x,
+            preview.y,
+            preview.scale,
+            preview.yaw,
+            preview.pitch,
+            preview.roll,
+            target,
+            withParticles);
         GL11.glEnable(GL11.GL_TEXTURE_2D);
         GL11.glDisable(GL11.GL_DEPTH_TEST);
         GL11.glDisable(GL11.GL_LIGHTING);

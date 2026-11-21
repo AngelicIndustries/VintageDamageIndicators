@@ -120,6 +120,18 @@ public final class HudPreviewMath {
      * The mob fitted into the window from how big it really draws (PreviewFit): as large as fits, centered across, its
      * lowest point on the window's floor. Overrides scale and nudge it from there. Null when it can't be measured.
      */
+    /**
+     * Whether the mob's model draws nothing in the HUD (PreviewFit.NOTHING): no model, only particles, or invisible on
+     * purpose. Measured with the HUD's own angles.
+     */
+    public static boolean drawsNothing(EntityLivingBase target, VarInstanceCommon.EntityOverride override) {
+        boolean child = target.isChild() || isCustomChild(target);
+        float yaw = Config.hudEntityYaw + (override != null ? override.yawOffset : 0.0F);
+        float pitch = Config.hudEntityPitch + (override != null ? override.pitchOffset : 0.0F);
+        float roll = override != null ? override.rollOffset : 0.0F;
+        return PreviewFit.get(target, child, yaw, pitch, roll) == PreviewFit.NOTHING;
+    }
+
     private static PreviewSettings resolveFittedSettings(EntityLivingBase target,
         VarInstanceCommon.EntityOverride override, boolean child, float baseYaw, float basePitch) {
         float yaw = baseYaw + (override != null ? override.yawOffset : 0.0F);

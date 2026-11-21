@@ -6,6 +6,7 @@ import java.nio.IntBuffer;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.entity.EntityLivingBase;
@@ -29,7 +30,13 @@ public final class PreviewFit {
     private static final float MEASURE_PIXELS = 72.0F;
     private static final int GL_FRAMEBUFFER_BINDING = 0x8CA6;
 
+    /** How long a mob that drew nothing waits before it is measured again: it may have been fading in or out. */
+    private static final long NOTHING_RETRY_MILLIS = 1000L;
+    /** What get gives for a mob that drew nothing at all, like one made only of particles. */
+    public static final Bounds NOTHING = new Bounds(0.0F, 0.0F, 0.0F, 0.0F);
+
     private static final Map<String, Bounds> CACHE = new HashMap<>();
+    private static final Map<String, Long> NOTHING_SINCE = new HashMap<>();
     private static final FloatBuffer DEPTH = BufferUtils.createFloatBuffer(SIZE * SIZE);
     private static final ByteBuffer ALPHA = BufferUtils.createByteBuffer(SIZE * SIZE);
     private static final IntBuffer VIEWPORT = BufferUtils.createIntBuffer(16);
@@ -37,7 +44,10 @@ public final class PreviewFit {
 
     private PreviewFit() {}
 
-    /** The mob's drawn bounds, in drawEntity scale units around its feet; null when they can't be measured. */
+    /**
+     * The mob's drawn bounds, in drawEntity scale units around its feet; NOTHING when it drew nothing, null when they
+     * can't be measured.
+     */
     public static Bounds get(EntityLivingBase entity, boolean child, float yaw, float pitch, float roll) {
         if (!OpenGlHelper.isFramebufferEnabled()) {
             return null;
@@ -55,7 +65,9 @@ public final class PreviewFit {
             + Math.round(pitch)
             + '|'
             + Math.round(roll);
-        if (CACHE.containsKey(key)) {
+        Long nothingSince = NOTHING_SINCE.get(key);
+        if (CACHE.containsKey(key)
+            && (nothingSince == null || Minecraft.getSystemTime() - nothingSince < NOTHING_RETRY_MILLIS)) {
             return CACHE.get(key);
         }
         Bounds bounds = null;
@@ -69,11 +81,17 @@ public final class PreviewFit {
                 t);
         }
         CACHE.put(key, bounds);
+        if (bounds == NOTHING) {
+            NOTHING_SINCE.put(key, Minecraft.getSystemTime());
+        } else {
+            NOTHING_SINCE.remove(key);
+        }
         return bounds;
     }
 
     public static void clear() {
         CACHE.clear();
+        NOTHING_SINCE.clear();
     }
 
     private static Bounds measure(EntityLivingBase entity, float yaw, float pitch, float roll) {
@@ -82,7 +100,7 @@ public final class PreviewFit {
         for (int attempt = 0; attempt < 3; attempt++) {
             int[] box = draw(entity, scale, yaw, pitch, roll);
             if (box == null) {
-                return null;
+                return NOTHING;
             }
             if (box[0] > 0 && box[1] > 0 && box[2] < SIZE - 1 && box[3] < SIZE - 1) {
                 return new Bounds(

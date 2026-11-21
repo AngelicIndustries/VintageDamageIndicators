@@ -793,7 +793,7 @@ public final class EntityOverrideEditorScreen extends GuiScreen {
                 if (HudEntityRenderer.hasRenderFailed(entity.getClass())) {
                     this.drawFailed++;
                     result = "DRAW FAILED";
-                } else if (bounds == null) {
+                } else if (bounds == null || bounds == PreviewFit.NOTHING) {
                     this.drewNothing++;
                     result = "DREW NOTHING";
                 } else {
