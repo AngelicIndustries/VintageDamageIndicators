@@ -149,7 +149,7 @@ public class HudEventHandler extends Gui {
             return;
         }
 
-        ClientPotionEffectsCache.tick();
+        ClientPotionEffectsCache.tick(minecraft.theWorld);
         updateTargetStateLinger();
     }
 
